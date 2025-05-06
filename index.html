@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Alan Vidal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Variables CSS pour les couleurs - Palette iOS XP Material Coloré */
+        :root {
+            --primary-color: #0056B3; /* Bleu un peu plus vif pour H1 */
+            --secondary-color: #F2F2F7; /* Gris de fond très clair (iOS) - Moins utilisé avec fond blanc */
+            --text-color: #1C1C1E; /* Gris très foncé pour le texte principal (iOS) */
+            --heading-color: #000000; /* Noir pour les titres */
+            --subheading-color: #0055AA; /* Bleu vif pour les sous-titres (iOS) */
+            --border-color: #D1D1D6; /* Gris clair pour les bordures générales (iOS) */
+            --border-item-color: #E5E5EA; /* Gris très clair pour les bordures d'item et cartes (iOS) */
+            --link-color: #007AFF; /* Bleu de lien standard (iOS) */
+            --link-hover-color: #5A287D; /* Violet un peu plus moderne au survol */
+            --date-color: #8E8E93; /* Gris moyen pour les dates et infos secondaires (iOS) */
+            --bullet-color: #007AFF; /* Bleu vif pour les puces et bordure H2 */
+            --skill-bg-color: #EFEFEF; /* Gris très clair pour les tags de compétences (iOS) */
+            --card-bg-color: #FFFFFF; /* Fond des cartes (blanc) */
+            --card-shadow: rgba(0, 0, 0, 0.15); /* Ombre légèrement plus marquée */
+            --section-separator-color: #D1D1D6; /* Gris pour les séparateurs de section (iOS) */
+            --internal-separator-color: #CCCCCC; /* Gris moyen pour les séparateurs internes */
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6; /* Légèrement plus d'interligne pour iOS */
+            margin: 0;
+            padding: 20px; /* Plus de padding pour l'espace */
+            background-color: #FFFFFF; /* Fond blanc */
+            color: var(--text-color);
+        }
+        .cv-container {
+            max-width: 800px;
+            margin: 20px auto; /* Plus de marge */
+            background-color: var(--card-bg-color); /* Le conteneur principal reste blanc */
+            padding: 30px;
+            box-shadow: 0 4px 12px var(--card-shadow);
+            border-radius: 10px; /* Coins plus arrondis */
+            border: none;
+            color: var(--text-color);
+        }
+        /* Styles pour les éléments de carte (appliqué à toutes les sections principales) */
+        .card {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--border-item-color);
+            box-shadow: 0 3px 10px var(--card-shadow);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            page-break-inside: avoid; /* Important pour l'impression */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border-left: 3px solid var(--bullet-color); /* Ajouter une bordure gauche plus fine */
+            padding-left: 22px; /* Ajuster le padding pour la bordure */
+        }
+         .card:hover {
+             transform: translateY(-3px);
+             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+             border-left-color: var(--primary-color); /* Changer la couleur de la bordure au survol */
+         }
+
+        header {
+            text-align: center;
+            margin-bottom: 15px; /* Marge réduite */
+            padding-bottom: 10px; /* Padding réduit */
+         //   border-bottom: 1px solid var(--border-color);
+        }
+        header h1 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 1.6em; /* Taille légèrement réduite */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: none;
+        }
+
+        /* Style pour la phrase sous le titre principal */
+        header .intro-text {
+            display: block;
+            margin-top: 8px; /* Marge réduite */
+            font-size: 1em; /* Taille légèrement réduite */
+            color: var(--heading-color);
+            font-weight: 400;
+            text-align: center; /* Centrer le texte */
+        }
+
+        .personal-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0; /* Supprimer la marge inférieure car elle est gérée par la carte */
+            margin-top: 20px; /* Ajouter une marge supérieure pour séparer de l'en-tête */
+            font-size: 0.95em; /* Taille légèrement réduite */
+            color: var(--date-color);
+            flex-wrap: wrap;
+            padding-bottom: 0; /* Supprimer le padding inférieur */
+            border-bottom: none; /* Supprimer la bordure inférieure */
+        }
+        .personal-info .name-age {
+            flex-shrink: 0;
+            margin-bottom: 8px; /* Marge réduite */
+        }
+        .personal-info .name-age p {
+            margin: 0;
+        }
+         .personal-info .name-age strong {
+             font-size: 1.1em; /* Taille légèrement réduite */
+             color: var(--heading-color);
+         }
+
+        .personal-info .contact-details {
+            text-align: right;
+            flex-grow: 1;
+            margin-left: 20px; /* Marge réduite */
+            margin-bottom: 8px; /* Marge réduite */
+        }
+         .personal-info .contact-details p {
+             margin: 0;
+         }
+
+         .personal-info a {
+             color: var(--link-color);
+             text-decoration: none;
+         }
+         .personal-info a:hover {
+             text-decoration: underline;
+             color: var(--link-hover-color);
+         }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            color: var(--heading-color);
+            border-bottom: 2px solid var(--bullet-color);
+            padding-bottom: 8px;
+            margin: 30px 0 25px 0;
+            border-top: 1px solid var(--section-separator-color);
+            padding-top: 20px;
+            font-size: 1.7em;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            text-shadow: none;
+        }
+        section:first-of-type h2 {
+            margin-top: 0;
+            border-top: none;
+            padding-top: 0;
+        }
+
+        /* Appliquer le style 'card' aux items d'expérience, de formation, de projet et de compétence */
+        .experience-item,
+        .formation-block,
+        .project-block,
+        .skill-block {
+            /* Utilise le style .card défini ci-dessus */
+            /* Les styles spécifiques ci-dessous peuvent surcharger si nécessaire */
+        }
+
+        section > div:last-child {
+             margin-bottom: 0;
+        }
+
+        .experience-item h3,
+        .project-block h3 {
+            margin: 0 0 10px 0;
+            color: var(--heading-color);
+            font-size: 1.2em;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+        .experience-item h3 span.date,
+        .project-block h3 span.date {
+            font-size: 0.9em;
+            color: var(--date-color);
+            font-weight: normal;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+
+        /* Simplification du style pour les sous-sections Crosscall */
+        .experience-item h4 {
+            margin: 20px 0 8px 0;
+            color: var(--subheading-color);
+            font-size: 1.1em;
+            font-weight: 700;
+            padding-bottom: 5px;
+            /* La bordure inférieure est gérée par crosscall-sub-section si besoin */
+        }
+
+        .crosscall-sub-section {
+             margin-bottom: 0;
+             padding-bottom: 15px;
+             /* Utilise une seule bordure supérieure solide pour le relief */
+             border-top: 1px solid var(--internal-separator-color);
+             margin-top: 15px;
+             padding-top: 15px;
+        }
+         .experience-item .crosscall-sub-section:first-of-type {
+             border-top: none;
+             padding-top: 0;
+             margin-top: 0;
+         }
+         /* Retire la bordure inférieure qui n'est plus nécessaire */
+         .crosscall-sub-section:last-child {
+             padding-bottom: 0;
+             border-bottom: none;
+         }
+
+        .experience-item .crosscall-sub-section ul {
+             list-style: disc;
+             padding-left: 25px;
+             margin-top: 10px;
+             margin-bottom: 0;
+             padding-bottom: 0;
+             border-bottom: none;
+        }
+
+        .experience-item p {
+            margin: 6px 0 15px 0;
+            font-style: italic;
+            font-size: 0.95em;
+            color: #666;
+            text-align: justify;
+        }
+
+        .experience-item ul,
+        .project-block ul,
+        .formation-block ul {
+            list-style: disc;
+            padding-left: 25px;
+            margin-top: 10px;
+        }
+
+        .experience-item li::marker,
+        .project-block li::marker,
+        .formation-block li::marker {
+            color: var(--bullet-color);
+        }
+
+        .experience-item li,
+        .project-block li,
+        .formation-block li {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+         .experience-item li strong,
+         .project-block li strong {
+             color: var(--heading-color);
+             margin-right: 5px;
+         }
+
+        /* Styles spécifiques pour la formation pour qu'elle ressemble aux autres listes */
+        .formation-block ul {
+            margin-top: 0;
+            padding-left: 0; /* Retirer le padding de la liste ul */
+            list-style: none; /* Retirer les puces par défaut de la liste ul */
+        }
+        .formation-block li {
+            margin-bottom: 8px;
+             padding-bottom: 8px;
+             border-bottom: 1px dashed var(--internal-separator-color);
+             text-align: justify;
+             padding-left: 25px; /* Ajouter le padding ici pour l'alignement avec les puces */
+             position: relative; /* Nécessaire pour positionner la puce personnalisée */
+        }
+        .formation-block li:last-child {
+            margin-bottom: 0;
+             padding-bottom: 0;
+             border-bottom: none;
+        }
+         /* Puces personnalisées pour la formation */
+        .formation-block li::before {
+            content: '\2022'; /* Caractère de puce (un rond) */
+            color: var(--bullet-color); /* Couleur de la puce */
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em; /* Aligner la puce à gauche du texte */
+            position: absolute;
+            left: 10px; /* Positionner la puce par rapport au bord gauche du li */
+        }
+
+         .formation-block li strong {
+             color: var(--heading-color);
+             font-weight: 700;
+             margin-right: 5px;
+         }
+        .formation-block li .date,
+        .formation-block li .promo-rank {
+             font-size: 0.9em;
+             color: var(--date-color);
+             font-weight: normal;
+             margin-left: 10px;
+             font-style: italic;
+        }
+
+         /* Styles spécifiques pour les compétences */
+         .skill-block h3 {
+             margin: 0 0 12px 0;
+             color: var(--heading-color);
+             font-size: 1.1em;
+             font-weight: 700;
+         }
+        .skill-block ul {
+             list-style: none;
+             padding: 0;
+             margin: 0;
+             display: flex;
+             flex-wrap: wrap;
+             margin-top: 0;
+         }
+        .skill-block li {
+             background-color: var(--skill-bg-color);
+             color: var(--text-color);
+             padding: 6px 12px;
+             margin: 5px;
+             border-radius: 6px;
+             border: 1px solid var(--border-item-color);
+             font-size: 0.95em;
+             white-space: nowrap;
+             transition: background-color 0.2s ease, transform 0.1s ease-in-out;
+         }
+        .skill-block li:hover {
+            background-color: #D4D0C8;
+             transform: translateY(-1px);
+        }
+  @media print {
+            body {
+                margin: 5mm; /* Marge réduite sur le corps de la page */
+                padding: 0;
+                background-color: #fff;
+                color: #000;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                margin: 0 auto;
+                padding: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            /* Ajustements pour l'en-tête en impression */
+            header {
+                margin-bottom: 10px !important;
+                padding-bottom: 5px !important;
+            }
+
+            header h1 {
+                margin-bottom: 5px !important;
+                font-size: 1.4em !important; /* Taille réduite pour le titre */
+            }
+
+            header .intro-text {
+                margin-top: 5px !important;
+                margin-bottom: 5px !important;
+                font-size: 0.95em !important; /* Taille réduite pour l'intro */
+            }
+
+            .personal-info {
+                margin-bottom: 10px !important;
+                padding-bottom: 5px !important;
+                font-size: 0.9em !important; /* Taille réduite */
+            }
+
+            /* Réduction globale de la taille des textes et espacements */
+            p, li, ul {
+                font-size: 0.9em !important;
+                line-height: 1.4 !important;
+            }
+
+            section {
+                margin-bottom: 15px !important;
+            }
+
+            section h2 {
+                font-size: 1.4em !important;
+                margin: 15px 0 10px 0 !important;
+                padding-bottom: 3px !important;
+                padding-top: 10px !important;
+            }
+
+            /* SOLUTION AU PROBLÈME DE SAUT DE PAGE: */
+            /* 1. Permettre le saut de page à l'intérieur des blocs d'expérience */
+            .experience-item {
+                page-break-inside: auto !important; /* Permet le saut de page à l'intérieur du bloc */
+                margin-bottom: 12px !important;
+                padding: 12px !important;
+            }
+
+            /* 2. Empêcher le saut de page après les titres et entre titres et contenus */
+            .experience-item h3,
+            .project-block h3,
+            .formation-block h3,
+            .skill-block h3 {
+                page-break-after: avoid !important;
+                font-size: 1.1em !important;
+                margin-bottom: 4px !important;
+            }
+
+            /* 3. Garder le titre avec au moins le paragraphe ou premier élément qui suit */
+            .experience-item h3 + p,
+            .experience-item h3 + ul,
+            .experience-item h3 + div,
+            .experience-item p + div:first-of-type,
+            .project-block h3 + ul,
+            .formation-block h3 + ul {
+                page-break-before: avoid !important;
+            }
+
+            /* 4. Optimiser l'espace pour les sous-sections */
+            .experience-item h4 {
+                font-size: 1em !important;
+                margin: 10px 0 3px 0 !important;
+                padding-bottom: 2px !important;
+                page-break-after: avoid !important;
+            }
+
+            .crosscall-sub-section {
+                padding-bottom: 8px !important;
+            }
+
+            .experience-item .crosscall-sub-section:not(:first-of-type) {
+                padding-top: 8px !important;
+                margin-top: 8px !important;
+            }
+
+            /* 5. Réduire les espaces des listes */
+            .experience-item ul,
+            .project-block ul,
+            .formation-block ul,
+            .experience-item .crosscall-sub-section ul {
+                margin-top: 4px !important;
+                padding-left: 15px !important;
+            }
+
+            .experience-item li,
+            .project-block li,
+            .formation-block li {
+                margin-bottom: 3px !important;
+            }
+
+            /* 6. Réduire l'espace pour les compétences */
+            .skill-block {
+                padding: 12px !important;
+                margin-bottom: 12px !important;
+            }
+
+            .skill-block ul {
+                margin-top: 4px !important;
+            }
+
+            .skill-block li {
+                padding: 3px 8px !important;
+                margin: 2px !important;
+                font-size: 0.85em !important;
+            }
+
+            /* 7. Réduire l'espace pour la section formation */
+            .formation-block {
+                padding: 12px !important;
+            }
+
+            .formation-block li {
+                padding-bottom: 3px !important;
+                margin-bottom: 3px !important;
+            }
+
+            /* 8. Ajuster les sauts de page - NE PAS forcer 'avoid' sur les sections */
+            section {
+                page-break-before: auto;
+                page-break-after: auto;
+                page-break-inside: auto;
+            }
+
+            /* Mais garder les blocs de formation et projets ensemble */
+            .formation-block,
+            .project-block {
+                page-break-inside: avoid !important;
+            }
+
+            /* Ne pas couper les items de liste simples */
+            li {
+                page-break-inside: avoid !important;
+            }
+
+            /* Réduire taille des dates */
+            .experience-item h3 span.date,
+            .project-block h3 span.date,
+            .formation-block li .date,
+            .formation-block li .promo-rank {
+                font-size: 0.8em !important;
+            }
+
+            /* Empêcher les URL d'apparaître pour les liens */
+            a[href]:after {
+                content: "" !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+
+        <div class="card">
+
+            <div class="personal-info">
+                <div class="name-age">
+                    <p><strong>ALAN VIDAL</strong></p>
+                    <p>25/08/1993 (31 ans)</p>
+                </div>
+                <div class="contact-details">
+                    <p>Email : <a href="mailto:alan.vidal@ik.me">alan.vidal@ik.me</a></p>
+                    <p>Téléphone : <a href="tel:+33634207080">06 34 20 70 80</a></p>
+                    <p>4 rue Auguste Laurent<br>Chelles, 77500</p>
+                </div>
+            </div>
+              <header>
+                <h1>Recherche de poste d’expert technique R&D</h1>
+                <span class="intro-text">Je suis à la recherche d'un poste d’ingénieur ou de coordinateur au sein d'une agence cyber, me permettant d'appliquer et d'approfondir mon expertise en cybersécurité, systèmes embarqués, cryptographie et réseau/télécommunication pour contribuer activement à la protection des infrastructures critiques.</span>
+            </header>
+
+        </div>
+
+
+        <section>
+            <h2>EXPÉRIENCES</h2>
+
+            <div class="experience-item card">
+                <h3>Architecte Android, Crosscall <span class="date">05/2021 - ...</span></h3>
+                <p>Rôles principaux : Pilotage NEO, Prototypage & Système, Formation interne</p>
+
+                <div class="crosscall-sub-section">
+                    <h4>Pilotage NEO</h4>
+                    <ul>
+                        <li><strong>CHEF DE PROJET TECHNIQUE :</strong> Pilotage des différents prestataires (OEM, ESN) et coordination des équipes internes. J'ai assuré la mise en production des terminaux NEO2 grâce à cette coordination.</li>
+                        <li><strong>ORCHESTRATION :</strong> Intégration et planification des retours clients dans le planning des livraisons. J'ai ainsi permis la mise en place progressive de nouveaux besoins sans retarder les livrables initialement prévus dans l’appel d’offre.</li>
+                        <li><strong>SECURE BOOT :</strong> Étude des solutions possibles pour assurer le secure boot. J'ai documenté, expliqué et demandé des personnalisations du système prévu par QCOM.</li>
+                    </ul>
+                </div>
+
+                <div class="crosscall-sub-section">
+                    <h4>Prototypage & modifications système</h4>
+                    <ul>
+                        <li><strong>INJECTION SYSTÈME :</strong> Spécification et développement d'une solution permettant d'injecter et de piloter de nouveaux services systèmes directement dans Android de manière sécurisée. J'ai pu mettre en place depuis une application l'injection d'archive signée contenant un binaire, sans redémarrer le terminal.</li>
+                        <li><strong>INTERCEPTION TLS :</strong> Mise en place d'un PoC permettant d'intercepter tous les flux TLS embarqués du terminal. J'ai ainsi pu contrôler quasiment tous les flux en clair.</li>
+                        <li><strong>BOOTLOADER :</strong> Modification du bootloader pour changer la manière de vérifier les signatures de VBMeta. J'ai adapté ce composant critique pour répondre à des besoins spécifiques.</li>
+                        <li><strong>RECOVERY :</strong> Portage d’un recovery alternatif pour copier à l’identique l’état du terminal. J'ai rendu possible la duplication fidèle de l'état du système.</li>
+                        <li><strong>SIGNATURE :</strong> Sécurisation des communications entre processus système et vérification de signature. J'ai protégé certaines méthodes établies comme les broadcast contre le rejeu ou l’usurpation.</li>
+                        <li><strong>CARTOGRAPHIE :</strong> Création d’un système de cartographie des dépendances entre les sources Android. J'ai développé cet outil pour mieux comprendre l'architecture du système.</li>
+                        <li><strong>FIREWALL :</strong> Développement du blocage des flux par application. J'ai permis l'extension de la pile réseau pour répondre aux besoins de certains clients.</li>
+                        <li><strong>PORTAGE :</strong> Portage des sources QCOM vers certains de nos terminaux. Cela m'a permis de compiler et d'adapter tous les composants logiciels du smartphone.</li>
+                        <li><strong>SUPPORT :</strong> Support technique. J'intervenais lorsque des problèmes techniques bloquaient certains développements, par exemple, certaines contraintes de sécurité perturbant le XSpace, ou la gestion de flux audio ou vidéo.</li>
+                        <li><strong>RETROINGENIERIE :</strong> Analyse du code compilé de divers programmes et composants logiciels. J'ai effectué cette analyse pour comprendre et modifier des binaires existants.</li>
+                    </ul>
+                </div>
+
+
+                <div class="crosscall-sub-section">
+                    <h4>Formateur interne</h4>
+                     <ul>
+                        <li><strong>BONNES PRATIQUES :</strong> Formation de différents services aux contraintes et aux processus liés à l’internalisation de projets logiciels. J'ai partagé mon expertise pour améliorer les pratiques internes.</li>
+                        <li><strong>CYBER :</strong> Mise en place de formations sur la cybersécurité, notamment sur les systèmes embarqués. J'ai sensibilisé les services aux risques spécifiques.</li>
+                        <li><strong>LEAD :</strong> Pilotage d'une équipe de techniciens validation n’ayant jamais écrit de code. J'ai assuré leur formation aux bases du développement logiciel et au travail en équipe, leur permettant d'écrire des scripts factorisés et d'utiliser Git efficacement.</li>
+                    </ul>
+                </div>
+
+                <div class="crosscall-sub-section">
+                    <h4>Expertise Android</h4>
+                    <ul>
+                        <li><strong>KPI :</strong> Mise en place de KPI à imposer au constructeur pour garantir une certaine qualité utilisateur. J'ai développé un logiciel capable de mesurer la fluidité, la capacité multitâche et la réactivité, fournissant des indicateurs reproductibles pour des scénarios d’usage de terrain.</li>
+                        <li><strong>STANDARDISATION :</strong> Développement d'une version 100% embarquée sous forme de librairie capable de rejouer des scénarios et d’envoyer les données via un bus standard. J'ai ainsi simplifié le travail des futurs développeurs.</li>
+                        <li><strong>GRAPH :</strong> Mise en place d’un programme d’analyse des similitudes entre des arborescences graphiques. L’objectif étant de permettre l’automatisation de scénarios préenregistrés sur différents terminaux en détectant la correspondance entre deux UI.</li>
+                        <li><strong>CONFIGURATION :</strong> Estimation des coûts et développement d'un programme permettant de générer et pousser des configurations sur réseaux privés. Cela m'a permis de me mettre à jour sur les frameworks multiplateformes.</li>
+                        <li><strong>MODE BUREAU :</strong> Étude technique et architecture de base du mode bureau. J'ai étudié des propositions d’achat, des solutions open source et le développement interne d’une nouvelle solution. J'ai retenu cette dernière pour éviter la dette technique, utiliser des éléments modernes d'Android et mettre en place une architecture propre.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item card">
+                <h3>Concepteur applicatif mobile, ANSSI <span class="date">09/2019 - 11/2020</span></h3>
+                <ul>
+                    <li><strong>ÉTUDE :</strong> Participation à la recherche, aux modifications et au développement d’applicatifs pour des smartphones en environnement durci.</li>
+                    <li><strong>DEV :</strong> Dans le cadre d’un applicatif mobile, j’ai été en charge de mettre en place le cahier des charges, la spécification et de prendre en compte les retours utilisateur, ainsi que de la validation hiérarchique projet.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item card">
+                <h3>Développeur/Ingénieur R&T, STSI² (Gendarmerie/Police) <span class="date">01/2018 - 07/2019</span></h3>
+                <ul>
+                    <li><strong>PC-STORM :</strong> Dans le cadre d’un usage multi-opérateur, il m’a été confié l’étude de faisabilité et le développement d’une application d’aide à la décision. J’ai fourni un rapport de 69 pages sur le sujet. Cette étude traitait de l’impact des différentes KPI réseaux sur les différents services, des différents moyens matériels et logiciels possibles, mais également sur la sûreté de l’application. Un système de dépendance et d’ordonnancement automatique des processus fut développé par mes soins.</li>
+                    <li><strong>ÉTUDES PROSPECTIVES :</strong> Participation à l’étude de certaines solutions traitant de l’authentification, des communications critiques ou des diverses facettes du projet PC-STORM. Cela m'a permis de parfaire mes compétences en télécommunication.</li>
+                    <li><strong>RETROINGENIERIE :</strong> Tests de la résistance à certaines attaques via la décompilation permettant de récupérer certaines données ou de contourner certaines vérifications.</li>
+                </ul>
+            </div>
+
+             <div class="experience-item card">
+                <h3>Interne, Natixis <span class="date">2016 - 2017</span></h3>
+                <p>Étude des outils de développement</p>
+                <ul>
+                    <li><strong>OUTILS :</strong> Participation à la recherche d’outil permettant d’aider les équipes produits à traduire une spécification en tests concrets.</li>
+                    <li><strong>CI/CD :</strong> J’ai codé et intégré à la CI Jenkins un outil d’aide à la gestion des sources.</li>
+                </ul>
+             </div>
+
+             <div class="experience-item card">
+                <h3>Stagiaire, Sycorax <span class="date">50 jours 2016</span></h3>
+                <ul>
+                    <li>Intervention chez les clients afin de résoudre les problèmes réseaux.</li>
+                    <li>Développement d’un système d’automatisation de génération et d’envoi des factures.</li>
+                    <li>Divers postes de manutention en usine.</li>
+                </ul>
+             </div>
+             <div class="experience-item card">
+                <h3>Divers postes de manutention en usine<span class="date">...</span></h3>
+             </div>
+        </section>
+
+         <section>
+            <h2>COMPÉTENCES</h2>
+            <div class="skill-block card">
+                <ul>
+                    <li>Gestion de projet</li>
+                    <li>Coordination d'équipes</li>
+                    <li>Accompagnement pour spécification</li>
+                    <li>Agile, Gantt, PERT, EBIOS…</li>
+                    <li>EBIOS</li>
+                    <li>Java</li>
+                    <li>Smali</li>
+                    <li>C/C++</li>
+                    <li>Rétroingénierie</li>
+                    <li>Kotlin</li>
+                    <li>Cybersécurité</li>
+                    <li>Cryptographie</li>
+                    <li>Réseau & Télécommunication</li>
+                    <li>C.I/C.D</li>
+                    <li>Git</li>
+                    <li>Docker</li>
+                    <li>Linux…</li>
+                </ul>
+            </div>
+        </section>
+
+         <section>
+            <h2>FORMATION</h2>
+            <div class="formation-block card">
+                <ul>
+                    <li>
+                        <strong>CNAM, Master Informatique, Systèmes Embarqués et Mobiles Sûrs</strong> <span class="date">2017-2019</span>
+                    </li>
+                     <li>
+                         <strong>Paris VIII, Licence Professionnelle, Si / Développement</strong> <span class="promo-rank">3ème de promotion</span> <span class="date">2016-2017</span>
+                     </li>
+                     <li>
+                         <strong>UPEC, DUT Réseau & Télécommunication</strong> <span class="date">2015-2016</span>
+                     </li>
+                </ul>
+            </div>
+        </section>
+
+         <section>
+            <h2>PROJETS PERSONNELS</h2>
+            <div class="project-block card">
+                <ul>
+                    <li>Mise en place d’infrastructures multi-serveurs sécurisées, à base de Docker, Firewall OPNsense et de VPN.</li>
+                    <li>Compilation et installation d'un serveur Ollama afin d’utiliser un LLM local sur un smartphone.</li>
+                    <li>Création d’un petit challenge stéganographique.</li>
+                    <li>Application de communication maillée PTT via le Wifi Direct.</li>
+                    <li>Application Web d'analyse sémantique (AngularJS + SpringBoot).</li>
+                    <li>Système de collecte et de consultation de données médicales embarqué sur le patient.</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
