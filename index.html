@@ -28,22 +28,30 @@
 
         body {
             font-family: 'Lato', sans-serif;
-            line-height: 1.6; /* Légèrement plus d'interligne pour iOS */
+            line-height: 1.6;
             margin: 0;
-            padding: 20px; /* Plus de padding pour l'espace */
-            background-color: #FFFFFF; /* Fond blanc */
+            padding: 20px; /* Padding par défaut pour les grands écrans */
+            background-color: #FFFFFF;
             color: var(--text-color);
+            display: block;
+            justify-content: initial;
+            align-items: initial;
+            min-height: auto;
+            overflow-x: hidden; /* Masquer le défilement horizontal par défaut */
         }
+
         .cv-container {
-            max-width: 800px;
-            margin: 20px auto; /* Plus de marge */
-            background-color: var(--card-bg-color); /* Le conteneur principal reste blanc */
-            padding: 30px;
+            max-width: 800px; /* Largeur maximale */
+            margin: 20px auto; /* Centrer le conteneur et ajouter de la marge */
+            background-color: var(--card-bg-color);
+            padding: 30px; /* Padding par défaut pour les grands écrans */
             box-shadow: 0 4px 12px var(--card-shadow);
-            border-radius: 10px; /* Coins plus arrondis */
+            border-radius: 10px;
             border: none;
             color: var(--text-color);
+            box-sizing: border-box; /* Inclure padding et border dans les dimensions */
         }
+
         /* Styles pour les éléments de carte (appliqué à toutes les sections principales) */
         .card {
             background-color: var(--card-bg-color);
@@ -65,59 +73,57 @@
 
         header {
             text-align: center;
-            margin-bottom: 15px; /* Marge réduite */
-            padding-bottom: 10px; /* Padding réduit */
-         //   border-bottom: 1px solid var(--border-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
         }
         header h1 {
             margin: 0;
             color: var(--primary-color);
-            font-size: 1.6em; /* Taille légèrement réduite */
+            font-size: 1.6em;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             text-shadow: none;
         }
 
-        /* Style pour la phrase sous le titre principal */
         header .intro-text {
             display: block;
-            margin-top: 8px; /* Marge réduite */
-            font-size: 1em; /* Taille légèrement réduite */
+            margin-top: 8px;
+            font-size: 1em;
             color: var(--heading-color);
             font-weight: 400;
-            text-align: center; /* Centrer le texte */
+            text-align: center;
         }
 
         .personal-info {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 0; /* Supprimer la marge inférieure car elle est gérée par la carte */
-            margin-top: 20px; /* Ajouter une marge supérieure pour séparer de l'en-tête */
-            font-size: 0.95em; /* Taille légèrement réduite */
+            margin-bottom: 0;
+            margin-top: 20px;
+            font-size: 0.95em;
             color: var(--date-color);
             flex-wrap: wrap;
-            padding-bottom: 0; /* Supprimer le padding inférieur */
-            border-bottom: none; /* Supprimer la bordure inférieure */
+            padding-bottom: 0;
+            border-bottom: none;
         }
         .personal-info .name-age {
             flex-shrink: 0;
-            margin-bottom: 8px; /* Marge réduite */
+            margin-bottom: 8px;
         }
         .personal-info .name-age p {
             margin: 0;
         }
          .personal-info .name-age strong {
-             font-size: 1.1em; /* Taille légèrement réduite */
+             font-size: 1.1em;
              color: var(--heading-color);
          }
 
         .personal-info .contact-details {
             text-align: right;
             flex-grow: 1;
-            margin-left: 20px; /* Marge réduite */
-            margin-bottom: 8px; /* Marge réduite */
+            margin-left: 20px;
+            margin-bottom: 8px;
         }
          .personal-info .contact-details p {
              margin: 0;
@@ -335,9 +341,11 @@
             background-color: #D4D0C8;
              transform: translateY(-1px);
         }
-  @media print {
+
+        /* Règle @media print existante - NE PAS MODIFIER */
+        @media print {
             body {
-                margin: 5mm; /* Marge réduite sur le corps de la page */
+                margin: 5mm;
                 padding: 0;
                 background-color: #fff;
                 color: #000;
@@ -511,6 +519,135 @@
             }
         }
 
+        /* Styles spécifiques pour les petits écrans pour améliorer la lisibilité */
+        @media (max-width: 768px) { /* Exemple de breakpoint pour les smartphones */
+            body {
+                 padding: 10px; /* Réduire le padding du body */
+            }
+
+            .cv-container {
+                 padding: 15px; /* Réduire le padding interne du conteneur principal */
+                 margin: 10px auto; /* Réduire la marge verticale */
+            }
+
+            header h1 {
+                font-size: 1.4em; /* Réduire la taille du titre principal */
+            }
+
+            header .intro-text {
+                font-size: 0.9em; /* Réduire la taille du texte d'introduction */
+            }
+
+            .personal-info {
+                flex-direction: column; /* Empiler les infos personnelles verticalement */
+                align-items: center; /* Centrer les éléments empilés */
+                text-align: center; /* Centrer le texte */
+            }
+
+            .personal-info .name-age,
+            .personal-info .contact-details {
+                margin-left: 0; /* Supprimer la marge gauche */
+                margin-bottom: 10px; /* Ajouter de la marge entre les blocs */
+                text-align: center; /* Centrer le texte */
+            }
+
+            section h2 {
+                font-size: 1.5em; /* Réduire la taille des titres de section */
+                margin: 20px 0 15px 0; /* Ajuster les marges */
+                padding-top: 15px; /* Ajuster le padding */
+            }
+
+            .card {
+                padding: 15px; /* Réduire le padding des cartes */
+                margin-bottom: 15px; /* Réduire la marge inférieure des cartes */
+                padding-left: 18px; /* Ajuster le padding gauche pour la bordure */
+            }
+
+            .experience-item h3,
+            .project-block h3 {
+                font-size: 1.1em; /* Réduire la taille des titres d'item */
+                flex-direction: column; /* Empiler titre et date */
+                align-items: flex-start; /* Aligner à gauche */
+            }
+
+            .experience-item h3 span.date,
+            .project-block h3 span.date {
+                 margin-left: 0; /* Supprimer la marge gauche */
+                 margin-top: 5px; /* Ajouter une petite marge au-dessus de la date */
+                 font-size: 0.85em; /* Réduire la taille de la date */
+            }
+
+            .experience-item h4 {
+                 font-size: 1em; /* Réduire la taille des sous-titres */
+                 margin: 15px 0 5px 0; /* Ajuster les marges */
+                 padding-top: 10px; /* Ajuster le padding */
+            }
+
+            .crosscall-sub-section {
+                 padding-bottom: 10px; /* Réduire le padding inférieur */
+                 margin-top: 10px; /* Réduire la marge supérieure */
+                 padding-top: 10px; /* Réduire le padding supérieur */
+            }
+
+            .experience-item .crosscall-sub-section:first-of-type {
+                 padding-top: 0;
+                 margin-top: 0;
+            }
+
+            .experience-item ul,
+            .project-block ul,
+            .formation-block ul,
+            .experience-item .crosscall-sub-section ul {
+                padding-left: 20px; /* Réduire le padding des listes */
+                margin-top: 8px; /* Réduire la marge supérieure des listes */
+            }
+
+            .experience-item li,
+            .project-block li,
+            .formation-block li {
+                 margin-bottom: 8px; /* Réduire la marge inférieure des items de liste */
+                 padding-bottom: 8px; /* Réduire le padding inférieur des items de liste */
+                 /* Assurer que le contenu du li ne déborde pas */
+                 word-break: break-word;
+            }
+
+            .formation-block li {
+                 padding-left: 20px; /* Ajuster le padding gauche pour la puce */
+                 /* Amélioration pour aligner le texte avec la puce */
+                 display: flex;
+                 align-items: flex-start;
+                 position: relative; /* Maintenir la position relative pour la puce */
+            }
+
+             .formation-block li::before {
+                 left: 5px; /* Ajuster la position de la puce */
+                 /* Ajustements pour le positionnement de la puce avec flex */
+                 position: absolute;
+                 top: 0.2em; /* Ajuster verticalement */
+             }
+
+            .formation-block li strong,
+            .formation-block li .date,
+            .formation-block li .promo-rank {
+                /* Assurer que ces éléments ne créent pas de débordement */
+                 display: block; /* Afficher sur des lignes séparées si nécessaire */
+                 margin-left: 0; /* Supprimer la marge gauche */
+            }
+
+            .formation-block li .date,
+            .formation-block li .promo-rank {
+                 margin-top: 3px; /* Ajouter un peu d'espace au-dessus de la date/promo */
+                 font-size: 0.8em; /* Réduire légèrement la taille */
+            }
+
+
+            .skill-block li {
+                 padding: 5px 10px; /* Ajuster le padding des tags de compétences */
+                 margin: 3px; /* Ajuster la marge des tags de compétences */
+                 font-size: 0.9em; /* Réduire la taille de police des tags */
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -587,7 +724,7 @@
                         <li><strong>GRAPH :</strong> Mise en place d’un programme d’analyse des similitudes entre des arborescences graphiques. L’objectif étant de permettre l’automatisation de scénarios préenregistrés sur différents terminaux en détectant la correspondance entre deux UI.</li>
                         <li><strong>CONFIGURATION :</strong> Estimation des coûts et développement d'un programme permettant de générer et pousser des configurations sur réseaux privés. Cela m'a permis de me mettre à jour sur les frameworks multiplateformes.</li>
                         <li><strong>MODE BUREAU :</strong> Étude technique et architecture de base du mode bureau. J'ai étudié des propositions d’achat, des solutions open source et le développement interne d’une nouvelle solution. J'ai retenu cette dernière pour éviter la dette technique, utiliser des éléments modernes d'Android et mettre en place une architecture propre.</li>
-                    </ul>
+                        </ul>
                 </div>
             </div>
 
