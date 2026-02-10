@@ -3,1125 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Alan Vidal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <title>Alan Vidal - Manager Cybersécurité</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Variables CSS pour les couleurs - Palette iOS XP Material Coloré */
         :root {
-            --primary-color: #0056B3; /* Bleu un peu plus vif pour H1 */
-            --secondary-color: #F2F2F7; /* Gris de fond très clair (iOS) - Moins utilisé avec fond blanc */
-            --text-color: #1C1C1E; /* Gris très foncé pour le texte principal (iOS) */
-            --heading-color: #000000; /* Noir pour les titres */
-            --subheading-color: #0055AA; /* Bleu vif pour les sous-titres (iOS) */
-            --border-color: #D1D1D6; /* Gris clair pour les bordures générales (iOS) */
-            --border-item-color: #E5E5EA; /* Gris très clair pour les bordures d'item et cartes (iOS) */
-            --link-color: #007AFF; /* Bleu de lien standard (iOS) */
-            --link-hover-color: #5A287D; /* Violet un peu plus moderne au survol */
-            --date-color: #8E8E93; /* Gris moyen pour les dates et infos secondaires (iOS) */
-            /* --bullet-color: #007AFF; /* Ancien bleu vif pour les puces et bordure H2 */ */
-            --skill-bg-color: #EFEFEF; /* Gris très clair pour les tags de compétences (iOS) */
-            --card-bg-color: #FFFFFF; /* Fond des cartes (blanc) */
-            --card-shadow: rgba(0, 0, 0, 0.15); /* Ombre légèrement plus marquée */
-            --section-separator-color: #D1D1D6; /* Gris pour les séparateurs de section (iOS) */
-            --internal-separator-color: #CCCCCC; /* Gris moyen pour les séparateurs internes */
-
-            /* Nouvelles couleurs pour les bordures de section */
-            --section-border-color-1: #FF6347; /* Tomato */
-            --section-border-color-2: #4682B4; /* SteelBlue */
-            --section-border-color-3: #32CD32; /* LimeGreen */
-            --section-border-color-4: #FFD700; /* Gold */
-            --section-border-color-5: #9370DB; /* MediumPurple */
-            /* Ajoutez d'autres couleurs si plus de sections sont nécessaires */
+            --primary: #1e293b;
+            --accent: #3b82f6;
+            --text: #334155;
+            --light: #f8fafc;
+            --border: #e2e8f0;
         }
 
         body {
-            font-family: 'Lato', sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.5;
             margin: 0;
-            padding: 0px; /* Padding par défaut pour les grands écrans */
-            background-color: #FFFFFF;
-            color: var(--text-color);
-            display: block;
-            justify-content: initial;
-            align-items: initial;
-            min-height: auto;
-            overflow-x: hidden; /* Masquer le défilement horizontal par défaut */
+            padding: 30px 15px;
+            background: #f1f5f9;
         }
 
         .cv-container {
-            max-width: 800px; /* Largeur maximale */
-            margin: 20px auto; /* Centrer le conteneur et ajouter de la marge */
-            background-color: var(--card-bg-color);
-            padding: 30px; /* Padding par défaut pour les grands écrans */
-            box-shadow: 0 4px 12px var(--card-shadow);
-            border-radius: 10px;
-            border: none;
-            color: var(--text-color);
-            box-sizing: border-box; /* Inclure padding et border dans les dimensions */
-        }
-
-        /* Styles pour les éléments de carte (appliqué à toutes les sections principales) */
-        .card {
-            background-color: var(--card-bg-color);
-            border: 1px solid var(--border-item-color);
-            box-shadow: 0 3px 10px var(--card-shadow);
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
             border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            page-break-inside: avoid; /* Important pour l'impression */
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            /* La bordure gauche par défaut est supprimée ici */
-            border-left: none;
-            padding-left: 20px; /* Ajuster le padding car la bordure n'est plus là */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-         .card:hover {
-             transform: translateY(-3px);
-             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-             /* La couleur de la bordure au survol est maintenant gérée par les règles nth-of-type spécifiques */
-         }
-
-        /* Styles spécifiques pour la bordure gauche des cartes dans chaque section */
-        /* Section 1: Expériences (maintenant en bleu) */
-        section:nth-of-type(1) .card {
-            border-left: 3px solid var(--section-border-color-2); /* Utilise la couleur bleue */
-            padding-left: 22px; /* Ajuster le padding pour la bordure */
-        }
-         /* Suppression du changement de couleur au survol pour cette section */
-         /* section:nth-of-type(1) .card:hover {
-             border-left-color: var(--primary-color);
-         } */
-
-        /* Section 2: Compétences (maintenant en rouge) */
-        section:nth-of-type(2) .card {
-            border-left: 3px solid var(--section-border-color-1); /* Utilise la couleur rouge */
-            padding-left: 22px; /* Ajuster le padding pour la bordure */
-        }
-         /* Suppression du changement de couleur au survol pour cette section */
-         /* section:nth-of-type(2) .card:hover {
-             border-left-color: var(--primary-color);
-         } */
-
-        /* Section 3: Projets Personnels (maintenant en vert) */
-        section:nth-of-type(3) .card {
-            border-left: 3px solid var(--section-border-color-3); /* Utilise la couleur verte */
-            padding-left: 22px; /* Ajuster le padding pour la bordure */
-        }
-         /* Suppression du changement de couleur au survol pour cette section */
-         /* section:nth-of-type(3) .card:hover {
-             border-left-color: var(--primary-color);
-         } */
-
-        /* Section 4: Formations (maintenant en jaune) */
-        section:nth-of-type(4) .card {
-            border-left: 3px solid var(--section-border-color-4); /* Utilise la couleur jaune */
-            padding-left: 22px; /* Ajuster le padding pour la bordure */
-        }
-         /* Suppression du changement de couleur au survol pour cette section */
-         /* section:nth-of-type(4) .card:hover {
-             border-left-color: var(--primary-color);
-         } */
-
-         /* Si vous avez plus de sections, ajoutez des règles nth-of-type(5), (6), etc. ici */
-         /* Exemple pour une 5ème section (si elle existait) */
-         /*
-         section:nth-of-type(5) .card {
-             border-left: 3px solid var(--section-border-color-5);
-             padding-left: 22px;
-         }
-          section:nth-of-type(5) .card:hover {
-              border-left-color: var(--primary-color);
-          }
-         */
-
 
         header {
-            text-align: center;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-        }
-        header h1 {
-            margin: 0;
-            color: var(--primary-color);
-            font-size: 1.4em;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        header .intro-text {
-            display: block;
-            margin-top: 8px;
-            font-size: 1em;
-            color: var(--heading-color);
-            font-weight: 400;
-            text-align: center;
-        }
-		.formation-item {
-			display: flex; /* Active Flexbox */
-			justify-content: space-between; /* Pousse les éléments aux extrémités */
-			align-items: baseline; /* Aligne le texte sur la ligne de base */
-			flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si l'espace est insuffisant */
-		}
-
-		/* Optionnel : Ajustement pour le rang de promotion si vous voulez qu'il soit sur la même ligne que la date */
-		.formation-item .promo-rank + .date {
-			margin-left: 10px; /* Ajoute un peu d'espace entre le rang et la date si nécessaire */
-		}
-        .personal-info {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 0;
-            margin-top: 20px;
-            font-size: 0.95em;
-            color: var(--date-color);
-            flex-wrap: wrap;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-        .personal-info .name-age {
-            flex-shrink: 0;
-            margin-bottom: 8px;
-        }
-        .personal-info .name-age p {
-            margin: 0;
-        }
-         .personal-info .name-age strong {
-             font-size: 1.1em;
-             color: var(--heading-color);
-         }
-
-        .personal-info .contact-details {
-            text-align: right;
-            flex-grow: 1;
-            margin-left: 20px;
-            margin-bottom: 8px;
-        }
-         .personal-info .contact-details p {
-             margin: 0;
-         }
-
-         .personal-info a {
-             color: var(--link-color);
-             text-decoration: none;
-         }
-         .personal-info a:hover {
-             text-decoration: underline;
-             color: var(--link-hover-color);
-         }
-
-        section {
             margin-bottom: 30px;
         }
 
-        section h2 {
-            color: var(--heading-color);
-            /* Modification ici pour que la bordure inférieure corresponde à la bordure gauche de la section */
-            border-bottom: 2px solid; /* La couleur sera définie par nth-of-type */
-            padding-bottom: 8px;
-            margin: 30px 0 25px 0;
-            border-top: 1px solid var(--section-separator-color);
-            padding-top: 20px;
-            font-size: 1.7em;
+        .name-area h1 { margin: 0; font-size: 28px; color: var(--primary); }
+        .name-area h2 { margin: 5px 0 0; color: var(--accent); font-size: 18px; font-weight: 600; }
+
+        .contact-info { text-align: right; font-size: 13px; color: #64748b; }
+
+        .intro {
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: var(--light);
+            border-radius: 6px;
+        }
+
+        section { margin-bottom: 25px; }
+
+        h3 {
+            font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
-            text-shadow: none;
-        }
-        section:first-of-type h2 {
-            margin-top: 0;
-            border-top: none;
-            padding-top: 0;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 15px;
+            padding-bottom: 2px;
         }
 
-        /* Définir la couleur de la bordure inférieure pour chaque titre de section */
-        section:nth-of-type(1) h2 {
-            border-bottom-color: var(--section-border-color-2); /* Bleu pour Expériences */
-        }
-        section:nth-of-type(2) h2 {
-            border-bottom-color: var(--section-border-color-1); /* Rouge pour Compétences */
-        }
-        section:nth-of-type(3) h2 {
-            border-bottom-color: var(--section-border-color-3); /* Vert pour Projets */
-        }
-        section:nth-of-type(4) h2 {
-            border-bottom-color: var(--section-border-color-4); /* Jaune pour Formations */
-        }
-        /* Ajoutez d'autres règles nth-of-type(n) h2 si vous avez plus de sections */
+        .job { margin-bottom: 20px; }
 
-
-        /* Appliquer le style 'card' aux items d'expérience, de formation, de projet et de compétence */
-        .experience-item,
-        .formation-block,
-        .project-block,
-        .skill-block {
-            /* Utilise le style .card défini ci-dessus */
-            /* Les styles spécifiques ci-dessous peuvent surcharger si nécessaire */
-        }
-
-        section > div:last-child {
-             margin-bottom: 0;
-        }
-
-        .experience-item h3,
-        .project-block h3 {
-            margin: 0 0 10px 0;
-            color: var(--heading-color);
-            font-size: 1.2em;
-            font-weight: 700;
+        .job-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-        }
-        .experience-item h3 span.date,
-        .project-block h3 span.date {
-            font-size: 0.9em;
-            color: var(--date-color);
-            font-weight: normal;
-            margin-left: 15px;
-            flex-shrink: 0;
-        }
-
-        /* Simplification du style pour les sous-sections Crosscall */
-        .experience-item h4 {
-            margin: 20px 0 8px 0;
-            color: var(--subheading-color);
-            font-size: 1.15em; /* Taille de police légèrement augmentée pour les titres de sous-section */
             font-weight: 700;
-            padding-bottom: 5px;
-            /* La bordure inférieure est gérée par crosscall-sub-section si besoin */
+            font-size: 14px;
+            color: var(--primary);
         }
 
-        .crosscall-sub-section {
-             margin-bottom: 0;
-             padding-bottom: 15px;
-             /* Utilise une seule bordure supérieure solide pour le relief */
-             border-top: 1px solid var(--internal-separator-color);
-             margin-top: 15px;
-             padding-top: 15px;
-        }
-         .experience-item .crosscall-sub-section:first-of-type {
-             border-top: none;
-             padding-top: 0;
-             margin-top: 0;
-
-         }
-         /* Retire la bordure inférieure qui n'est plus nécessaire */
-         .crosscall-sub-section:last-child {
-             padding-bottom: 0;
-             border-bottom: none;
-         }
-
-        .experience-item .crosscall-sub-section ul {
-             list-style: disc;
-             padding-left: 25px;
-             margin-top: 10px;
-             margin-bottom: 0;
-             padding-bottom: 0;
-             border-bottom: none;
-        }
-
-        .experience-item p {
-            margin: 6px 0 15px 0;
-            font-style: italic;
-            font-size: 0.95em;
-            color: #666;
-            text-align: justify;
-        }
-
-        .experience-item ul,
-        .project-block ul,
-        .formation-block ul {
-            list-style: disc;
-            padding-left: 25px;
-            margin-top: 10px;
-        }
-
-        /* Modification ici pour que les puces correspondent à la couleur de la bordure gauche de la section */
-        .experience-item li::marker,
-        .project-block li::marker,
-        .formation-block li::marker {
-            /* La couleur sera définie par nth-of-type */
-        }
-
-        /* Définir la couleur des puces pour chaque section */
-        section:nth-of-type(1) li::marker {
-            color: var(--section-border-color-2); /* Bleu pour Expériences */
-        }
-        section:nth-of-type(2) li::marker {
-            color: var(--section-border-color-1); /* Rouge pour Compétences */
-        }
-        section:nth-of-type(3) li::marker {
-            color: var(--section-border-color-3); /* Vert pour Projets */
-        }
-        section:nth-of-type(4) li::marker {
-            color: var(--section-border-color-4); /* Jaune pour Formations */
-        }
-         /* Ajoutez d'autres règles nth-of-type(n) li::marker si vous avez plus de sections */
-
-
-        .experience-item li,
-        .project-block li,
-        .formation-block li {
-            margin-bottom: 10px;
-            text-align: justify;
-        }
-
-         .experience-item li strong,
-         .project-block li strong {
-             color: var(--heading-color);
-             margin-right: 5px;
-             font-size: 1em; /* Ajuster la taille de police pour qu'elle ne soit pas plus grande que h4 */
-         }
-
-        /* Styles spécifiques pour la formation pour qu'elle ressemble aux autres listes */
-        .formation-block ul {
-            margin-top: 0;
-            padding-left: 0; /* Retirer le padding de la liste ul */
-            list-style: none; /* Retirer les puces par défaut de la liste ul */
-        }
-        .formation-block li {
+        .job-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--accent);
             margin-bottom: 8px;
-             padding-bottom: 8px;
-             border-bottom: 1px dashed var(--internal-separator-color);
-             text-align: justify;
-             padding-left: 25px; /* Ajouter le padding ici pour l'alignement avec les puces */
-             position: relative; /* Nécessaire pour positionner la puce personnalisée */
-        }
-        .formation-block li:last-child {
-            margin-bottom: 0;
-             padding-bottom: 0;
-             border-bottom: none;
-        }
-         /* Puces personnalisées pour la formation */
-        .formation-block li::before {
-            content: '\2022'; /* Caractère de puce (un rond) */
-            /* Modification ici pour que la puce personnalisée corresponde à la couleur de la bordure gauche de la section */
-            /* La couleur sera définie par nth-of-type */
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em; /* Aligner la puce à gauche du texte */
-            position: absolute;
-            left: 10px; /* Positionner la puce par rapport au bord gauche du li */
         }
 
-         /* Définir la couleur des puces personnalisées pour chaque section */
-        section:nth-of-type(1) .formation-block li::before {
-            color: var(--section-border-color-2); /* Bleu pour Expériences */
-        }
-        section:nth-of-type(2) .formation-block li::before {
-            color: var(--section-border-color-1); /* Rouge pour Compétences */
-        }
-        section:nth-of-type(3) .formation-block li::before {
-            color: var(--section-border-color-3); /* Vert pour Projets */
-        }
-        section:nth-of-type(4) .formation-block li::before {
-            color: var(--section-border-color-4); /* Jaune pour Formations */
-        }
-        /* Ajoutez d'autres règles nth-of-type(n) .formation-block li::before si vous avez plus de sections */
+        ul { padding-left: 20px; margin: 5px 0; }
+        li { margin-bottom: 5px; font-size: 13px; }
 
-
-         .formation-block li strong {
-             color: var(--heading-color);
-             font-weight: 700;
-             margin-right: 5px;
-         }
-        .formation-block li .date,
-        .formation-block li .promo-rank {
-             font-size: 0.9em;
-             color: var(--date-color);
-             font-weight: normal;
-             margin-left: 10px;
-             font-style: italic;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
         }
 
-         /* Styles spécifiques pour les compétences */
-         .skill-block h3 {
-             margin: 0 0 12px 0;
-             color: var(--heading-color);
-             font-size: 1.1em;
-             font-weight: 700;
-         }
-        .skill-block ul {
-             list-style: none;
-             padding: 0;
-             margin: 0;
-             display: flex;
-             flex-wrap: wrap;
-             margin-top: 0;
-         }
-        /* Styles mis à jour pour les tags de compétences */
-        .skill-block li {
-             background-color: #F8F8F8; /* Un gris très léger, plus moderne */
-             color: var(--text-color);
-             padding: 8px 16px; /* Augmenter légèrement le padding */
-             margin: 4px; /* Ajuster la marge */
-             border-radius: 20px; /* Bordures plus arrondies (forme de pilule) */
-             border: 1px solid #E0E0E0; /* Bordure légèrement plus claire */
-             font-size: 0.9em; /* Taille de police légèrement réduite */
-             white-space: nowrap;
-             transition: background-color 0.2s ease, transform 0.1s ease-in-out, box-shadow 0.2s ease;
-             box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* Ajouter une subtile ombre */
-        }
-        .skill-block li:hover {
-            background-color: #EAEAEA; /* Changer légèrement la couleur au survol */
-             transform: translateY(-2px); /* Effet de soulèvement subtil */
-             box-shadow: 0 3px 6px rgba(0,0,0,0.12); /* Ombre plus marquée au survol */
+        .skill-box {
+            padding: 12px;
+            background: var(--light);
+            border-radius: 4px;
+            font-size: 13px;
         }
 
-        /* Règle @media print existante - NE PAS MODIFIER */
+        .skill-box strong { display: block; margin-bottom: 5px; color: var(--primary); font-size: 12px; text-transform: uppercase; }
+
         @media print {
-            body {
-                margin: 5mm;
-                padding: 0;
-                background-color: #fff;
-                color: #000;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .cv-container {
-                box-shadow: none;
-                margin: 0 auto;
-                padding: 0;
-                width: 100%;
-                max-width: 100%;
-            }
-
-            /* Ajustements pour l'en-tête en impression */
-            header {
-                margin-bottom: 0px !important;
-                padding-bottom: 5px !important;
-            }
-
-            header h1 {
-                margin-bottom: 5px !important;
-                font-size: 1.4em !important; /* Taille réduite pour le titre */
-            }
-
-            header .intro-text {
-                margin-top: 5px !important;
-                margin-bottom: 5px !important;
-                font-size: 0.95em !important; /* Taille réduite pour l'intro */
-            }
-
-            .personal-info {
-                margin-bottom: 10px !important;
-                padding-bottom: 5px !important;
-                font-size: 0.9em !important; /* Taille réduite */
-            }
-
-            /* Réduction globale de la taille des textes et espacements */
-            p, li, ul {
-                font-size: 0.9em !important;
-                line-height: 1.2 !important;
-            }
-
-            section {
-                margin-bottom: 15px !important;
-            }
-
-            section h2 {
-                font-size: 1.4em !important;
-                margin: 15px 0 10px 0 !important;
-                padding-bottom: 3px !important;
-                padding-top: 10px !important;
-                 /* Appliquer la couleur de la bordure inférieure pour l'impression */
-                border-bottom-color: inherit !important; /* Permet d'hériter de la couleur définie plus haut */
-            }
-             /* Définir la couleur de la bordure inférieure pour chaque titre de section en impression */
-             section:nth-of-type(1) h2 {
-                 border-bottom-color: var(--section-border-color-2) !important; /* Bleu pour Expériences */
-             }
-             section:nth-of-type(2) h2 {
-                 border-bottom-color: var(--section-border-color-1) !important; /* Rouge pour Compétences */
-             }
-             section:nth-of-type(3) h2 {
-                 border-bottom-color: var(--section-border-color-3) !important; /* Vert pour Projets */
-             }
-             section:nth-of-type(4) h2 {
-                 border-bottom-color: var(--section-border-color-4) !important; /* Jaune pour Formations */
-             }
-             /* Ajoutez d'autres règles nth-of-type(n) h2 si vous avez plus de sections */
-
-
-            /* SOLUTION AU PROBLÈME DE SAUT DE PAGE: */
-            /* 1. Permettre le saut de page à l'intérieur des blocs d'expérience */
-            .experience-item {
-                page-break-inside: auto !important; /* Permet le saut de page à l'intérieur du bloc */
-                margin-bottom: 12px !important;
-                padding: 12px !important;
-            }
-
-            /* 2. Empêcher le saut de page après les titres et entre titres et contenus */
-            .experience-item h3,
-            .project-block h3,
-            .formation-block h3,
-            .skill-block h3 {
-                page-break-after: avoid !important;
-                font-size: 1.1em !important;
-                margin-bottom: 4px !important;
-            }
-
-            /* 3. Garder le titre avec au moins le paragraphe ou premier élément qui suit */
-            .experience-item h3 + p,
-            .experience-item h3 + ul,
-            .experience-item h3 + div,
-            .experience-item p + div:first-of-type,
-            .project-block h3 + ul,
-            .formation-block h3 + ul {
-                page-break-before: avoid !important;
-            }
-
-            /* 4. Optimiser l'espace pour les sous-sections */
-            .experience-item h4 {
-                font-size: 1.05em !important; /* Ajustement pour l'impression */
-                margin: 10px 0 3px 0 !important;
-                padding-bottom: 2px !important;
-                page-break-after: avoid !important;
-            }
-
-            .crosscall-sub-section {
-                padding-bottom: 8px !important;
-            }
-
-            .experience-item .crosscall-sub-section:not(:first-of-type) {
-                padding-top: 8px !important;
-                margin-top: 8px !important;
-            }
-
-            /* 5. Réduire les espaces des listes */
-            .experience-item ul,
-            .project-block ul,
-            .formation-block ul,
-            .experience-item .crosscall-sub-section ul {
-                margin-top: 4px !important;
-                padding-left: 15px !important;
-            }
-
-            .experience-item li,
-            .project-block li,
-            .formation-block li {
-                margin-bottom: 3px !important;
-            }
-
-             /* Appliquer la couleur des puces pour l'impression */
-             .experience-item li::marker,
-             .project-block li::marker,
-             .formation-block li::marker {
-                 color: inherit !important; /* Permet d'hériter de la couleur définie plus haut */
-             }
-             /* Définir la couleur des puces pour chaque section en impression */
-             section:nth-of-type(1) li::marker {
-                 color: var(--section-border-color-2) !important; /* Bleu pour Expériences */
-             }
-             section:nth-of-type(2) li::marker {
-                 color: var(--section-border-color-1) !important; /* Rouge pour Compétences */
-             }
-             section:nth-of-type(3) li::marker {
-                 color: var(--section-border-color-3) !important; /* Vert pour Projets */
-             }
-             section:nth-of-type(4) li::marker {
-                 color: var(--section-border-color-4) !important; /* Jaune pour Formations */
-             }
-             /* Ajoutez d'autres règles nth-of-type(n) li::marker si vous avez plus de sections */
-
-             /* Appliquer la couleur des puces personnalisées pour la formation en impression */
-             .formation-block li::before {
-                 color: inherit !important; /* Permet d'hériter de la couleur définie plus haut */
-             }
-             /* Définir la couleur des puces personnalisées pour chaque section en impression */
-             section:nth-of-type(1) .formation-block li::before {
-                 color: var(--section-border-color-2) !important; /* Bleu pour Expériences */
-             }
-             section:nth-of-type(2) .formation-block li::before {
-                 color: var(--section-border-color-1) !important; /* Rouge pour Compétences */
-             }
-             section:nth-of-type(3) .formation-block li::before {
-                 color: var(--section-border-color-3) !important; /* Vert pour Projets */
-             }
-             section:nth-of-type(4) .formation-block li::before {
-                 color: var(--section-border-color-4) !important; /* Jaune pour Formations */
-             }
-             /* Ajoutez d'autres règles nth-of-type(n) .formation-block li::before si vous avez plus de sections */
-
-
-            /* 6. Réduire l'espace pour les compétences */
-            .skill-block {
-                padding: 12px !important;
-                margin-bottom: 12px !important;
-            }
-
-            .skill-block ul {
-                margin-top: 4px !important;
-            }
-
-            /* Ajustements pour les tags de compétences en impression */
-            .skill-block li {
-                padding: 4px 10px !important; /* Ajuster le padding */
-                margin: 2px !important; /* Ajuster la marge */
-                font-size: 0.8em !important; /* Réduire la taille de police */
-                border-radius: 15px !important; /* Ajuster les bordures */
-                box-shadow: none !important; /* Supprimer l'ombre en impression */
-                border-color: #D0D0D0 !important; /* Assurer une bordure visible */
-                background-color: #F0F0F0 !important; /* Assurer un fond visible */
-            }
-
-
-            /* 7. Réduire l'espace pour la section formation */
-            .formation-block {
-                padding: 12px !important;
-            }
-
-            .formation-block li {
-                padding-bottom: 3px !important;
-                margin-bottom: 3px !important;
-            }
-
-            /* 8. Ajuster les sauts de page - NE PAS forcer 'avoid' sur les sections */
-            section {
-                page-break-before: auto;
-                page-break-after: auto;
-                page-break-inside: auto;
-            }
-
-            /* Mais garder les blocs de formation et projets ensemble */
-            .formation-block,
-            .project-block {
-                page-break-inside: avoid !important;
-            }
-
-            /* Ne pas couper les items de liste simples */
-            li {
-                page-break-inside: avoid !important;
-            }
-
-            /* Réduire taille des dates */
-            .experience-item h3 span.date,
-            .project-block h3 span.date,
-            .formation-block li .date,
-            .formation-block li .promo-rank {
-                font-size: 0.8em !important;
-            }
-
-            /* Empêcher les URL d'apparaître pour les liens */
-            a[href]:after {
-                content: "" !important;
-            }
+            body { background: white; padding: 0; }
+            .cv-container { box-shadow: none; padding: 10px; }
         }
-
-        /* Styles spécifiques pour les petits écrans pour améliorer la lisibilité */
-        @media (max-width: 768px) { /* Exemple de breakpoint pour les smartphones */
-            body {
-                 padding: 10px; /* Réduire le padding du body */
-            }
-
-            .cv-container {
-                 padding: 15px; /* Réduire le padding interne du conteneur principal */
-                 margin: 10px auto; /* Réduire la marge verticale */
-            }
-
-            header h1 {
-                font-size: 1.4em; /* Réduire la taille du titre principal */
-            }
-
-            header .intro-text {
-                font-size: 0.9em; /* Réduire la taille du texte d'introduction */
-            }
-
-            .personal-info {
-                flex-direction: column; /* Empiler les infos personnelles verticalement */
-                align-items: center; /* Centrer les éléments empilés */
-                text-align: center; /* Centrer le texte */
-            }
-
-            .personal-info .name-age,
-            .personal-info .contact-details {
-                margin-left: 0; /* Supprimer la marge gauche */
-                margin-bottom: 10px; /* Ajouter de la marge entre les blocs */
-                text-align: center; /* Centrer le texte */
-            }
-
-            section h2 {
-                font-size: 1.5em; /* Réduire la taille des titres de section */
-                margin: 20px 0 15px 0; /* Ajuster les marges */
-                padding-top: 15px; /* Ajuster le padding */
-                 /* Appliquer la couleur de la bordure inférieure pour les petits écrans */
-                border-bottom-color: inherit; /* Permet d'hériter de la couleur définie plus haut */
-            }
-             /* Définir la couleur de la bordure inférieure pour chaque titre de section sur petits écrans */
-             section:nth-of-type(1) h2 {
-                 border-bottom-color: var(--section-border-color-2); /* Bleu pour Expériences */
-             }
-             section:nth-of-type(2) h2 {
-                 border-bottom-color: var(--section-border-color-1); /* Rouge pour Compétences */
-             }
-             section:nth-of-type(3) h2 {
-                 border-bottom-color: var(--section-border-color-3); /* Vert pour Projets */
-             }
-             section:nth-of-type(4) h2 {
-                 border-bottom-color: var(--section-border-color-4); /* Jaune pour Formations */
-             }
-             /* Ajoutez d'autres règles nth-of-type(n) h2 si vous avez plus de sections */
-
-
-            .card {
-                padding: 15px; /* Réduire le padding des cartes */
-                margin-bottom: 15px; /* Réduire la marge inférieure des cartes */
-                /* Retirer le padding-left ajusté ici car il sera géré par les règles nth-of-type */
-                padding-left: 15px;
-            }
-
-             /* Ajuster le padding gauche pour les petits écrans en fonction de la bordure */
-             section:nth-of-type(1) .card,
-             section:nth-of-type(2) .card,
-             section:nth-of-type(3) .card,
-             section:nth-of-type(4) .card {
-                 padding-left: 18px; /* Ajuster le padding gauche pour la bordure de 3px */
-             }
-
-
-            .experience-item h3,
-            .project-block h3 {
-                font-size: 1.1em; /* Réduire la taille des titres d'item */
-                flex-direction: column; /* Empiler titre et date */
-                align-items: flex-start; /* Aligner à gauche */
-            }
-
-            .experience-item h3 span.date,
-            .project-block h3 span.date {
-                 margin-left: 0; /* Supprimer la marge gauche */
-                 margin-top: 5px; /* Ajouter une petite marge au-dessus de la date */
-                 font-size: 0.85em; /* Réduire la taille de la date */
-            }
-
-            .experience-item h4 {
-                 font-size: 1em; /* Réduire la taille des sous-titres */
-                 margin: 15px 0 5px 0; /* Ajuster les marges */
-                 padding-top: 10px; /* Ajuster le padding */
-            }
-
-            .crosscall-sub-section {
-                 padding-bottom: 10px; /* Réduire le padding inférieur */
-                 margin-top: 10px; /* Réduire la marge supérieure */
-                 padding-top: 10px; /* Réduire le padding supérieur */
-            }
-
-            .experience-item .crosscall-sub-section:first-of-type {
-                 padding-top: 0;
-                 margin-top: 0;
-            }
-
-            .experience-item ul,
-            .project-block ul,
-            .formation-block ul,
-            .experience-item .crosscall-sub-section ul {
-                padding-left: 20px; /* Réduire le padding des listes */
-                margin-top: 8px; /* Réduire la marge supérieure des listes */
-            }
-
-            .experience-item li,
-            .project-block li,
-            .formation-block li {
-                 margin-bottom: 8px; /* Réduire la marge inférieure des items de liste */
-                 padding-bottom: 8px; /* Réduire le padding inférieur des items de liste */
-                 /* Assurer que le contenu du li ne déborde pas */
-                 word-break: break-word;
-            }
-
-            .formation-block li {
-                 padding-left: 20px; /* Ajuster le padding gauche pour la puce */
-                 /* Amélioration pour aligner le texte avec la puce */
-                 display: flex;
-                 align-items: flex-start;
-                 position: relative; /* Maintenir la position relative pour la puce */
-            }
-
-             .formation-block li::before {
-                 left: 5px; /* Ajuster la position de la puce */
-                 /* Ajustements pour le positionnement de la puce avec flex */
-                 position: absolute;
-                 top: 0.2em; /* Ajuster verticalement */
-             }
-
-            .formation-block li strong,
-            .formation-block li .date,
-            .formation-block li .promo-rank {
-                /* Assurer que ces éléments ne créent pas de débordement */
-                 display: block; /* Afficher sur des lignes séparées si nécessaire */
-                 margin-left: 0; /* Supprimer la marge gauche */
-            }
-
-            .formation-block li .date,
-            .formation-block li .promo-rank {
-                 margin-top: 3px; /* Ajouter un peu d'espace au-dessus de la date/promo */
-                 font-size: 0.8em; /* Réduire légèrement la taille */
-            }
-
-            /* Ajustements pour les tags de compétences sur petits écrans */
-            .skill-block li {
-                 padding: 6px 12px; /* Ajuster le padding */
-                 margin: 3px; /* Ajuster la marge */
-                 font-size: 0.85em; /* Réduire la taille de police */
-                 border-radius: 18px; /* Ajuster les bordures */
-            }
-        }
-
     </style>
 </head>
 <body>
     <div class="cv-container">
-
-        <div class="card">
-
-            <div class="personal-info">
-                <div class="name-age">
-                    <p><strong>ALAN VIDAL</strong></p>
-                    <p>25/08/1993 (31 ans)</p>
-                    <p>
-                       Dernière version du CV :
-                            <a href="https://alanvidal.github.io/">
-                                En ligne
-                            </a>
-                    </p>
-                    </div>
-                <div class="contact-details">
-                    <p><a href="mailto:alan.vidal@ik.me">alan.vidal@ik.me</a></p>
-                    <p><a href="tel:+33634207080">06 34 20 70 80</a></p>
-                    <p>4 rue Auguste Laurent<br>Chelles, 77500</p>
-                </div>
+        <header>
+            <div class="name-area">
+                <h1>Alan Vidal</h1>
+                <h2>Manager Cybersécurité / Responsable de Bureau</h2>
             </div>
-              <header>
-                <h1>Recherche de poste d’expert technique R&D</h1>
-                <span class="intro-text">Recherche un poste d'ingénieur ou de coordinateur, me permettant d'appliquer et d'approfondir mon expertise en cybersécurité, systèmes embarqués, cryptographie et réseau/télécommunications afin d'activement contribuer à la protection des infrastructures critiques.</span>
-            </header>
+            <div class="contact-info">
+                <div>06 34 20 70 80 | alan.vidal@ik.me</div>
+                <div>Chelles (77) | Permis B</div>
+            </div>
+        </header>
 
+        <div class="intro">
+            Spécialiste en sécurité mobile et architecture logicielle. Après plusieurs expériences au sein de services de l'État (ANSSI, Gendarmerie), je souhaite aujourd'hui encadrer des projets et des équipes techniques pour assurer la protection des systèmes et la qualité des développements.
         </div>
 
+        <section>
+            <h3>Parcours Professionnel</h3>
+
+            <div class="job">
+                <div class="job-header">
+                    <span>SeeHaptic</span>
+                    <span>09/2025 — Présent</span>
+                </div>
+                <div class="job-title">Architecte Qualité Logiciel et Cyber</div>
+                <ul>
+                    <li><strong>Sécurité des solutions :</strong> Analyse de vulnérabilités, évaluation des risques produits et préconisations de mesures correctives.</li>
+                    <li><strong>Assurance Qualité (QA) :</strong> Pilotage et supervision des campagnes de tests. Mise en place de Dashboards, définition de KPI et synchronisation des équipes pour la priorisation des correctifs.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span>Crosscall</span>
+                    <span>05/2021 — 08/2025</span>
+                </div>
+                <div class="job-title">Chef de Projet Technique & Architecte Android</div>
+                <ul>
+                    <li><strong>Gestion de projet :</strong> Pilotage opérationnel du projet NEO (terminaux sécurisés). Coordination de multiples partenaires (OEM, ESN) et d'équipes internes. Suivi du planning et respect des jalons critiques.</li>
+                    <li><strong>Management & Organisation :</strong> Encadrement d'une équipe de techniciens de validation. Mise en place de méthodes de travail collaboratif (Git) et formation aux standards de développement.</li>
+                    <li><strong>Estimation & Pilotage budgétaire :</strong> Chiffrage financier des programmes de gestion de configurations sur réseaux privés. Arbitrage technique (Achat vs Open Source) pour la réduction de la dette technique.</li>
+                    <li><strong>Expertise & Transmission :</strong> Prototypage de solutions critiques (firewall applicatif, interception TLS, injection système). **Formateur interne** sur les enjeux de cryptographie et d'intégrité logicielle.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span>ANSSI</span>
+                    <span>09/2019 — 11/2020</span>
+                </div>
+                <div class="job-title">Concepteur d'Applications Mobiles Sécurisées</div>
+                <ul>
+                    <li><strong>Gestion de projet applicatif :</strong> Rédaction du cahier des charges, spécification détaillée des besoins utilisateurs et validation hiérarchique.</li>
+                    <li><strong>R&D Mobile :</strong> Étude et développement d’applicatifs sécurisés pour smartphones en environnement durci.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span>STSI² (Gendarmerie / Police)</span>
+                    <span>01/2018 — 07/2019</span>
+                </div>
+                <div class="job-title">Ingénieur R&T - Sécurité</div>
+                <ul>
+                    <li><strong>Aide à la décision :</strong> Réalisation d'un rapport d'étude de faisabilité de 69 pages sur une application multi-opérateur. Analyse de l'impact des KPI réseau sur les usages terrain.</li>
+                    <li><strong>Audit de sécurité :</strong> Pentest par décompilation pour identifier les contournements possibles et les risques de fuites de données. Ordonnancement de processus complexes.</li>
+                </ul>
+            </div>
+        </section>
 
         <section>
-            <h2>EXPÉRIENCES</h2>
-
-            <div class="experience-item card">
-                <h3>Architecte Android, Crosscall <span class="date">05/2021 - ...</span></h3>
-                <p>Rôles principaux : Pilotage NEO, Prototypage & Système, Formation interne</p>
-
-                <div class="crosscall-sub-section">
-                    <h4>Pilotage NEO</h4>
-					<p>Téléphone sécurisé déployé pour 200 000 agents régaliens</p>
-                    <ul>
-                        <li><strong>CHEF DE PROJET TECHNIQUE :</strong> Pilotage des différents prestataires (fabricant, ESN) et coordination des équipes internes. 
-						J'ai accompagné le client dans la rédaction de ses spécifications, puis je me suis assuré de leur bonne compréhension et implémentation par les sous-traitants.</li>
-                    </ul>
+            <h3>Compétences</h3>
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <strong>Pilotage & Management</strong>
+                    Agile, Budget, Planning (Gantt/PERT), Coordination d'ESN/OEM, KPI.
                 </div>
-
-                <div class="crosscall-sub-section">
-                    <h4>Étude technique et architecture</h4>
-                     <ul>
-                      	<li><strong>MODE BUREAU :</strong> 
-						Étude technique et définition de l'architecture pour les bases du mode bureau. 
-						J'ai analysé diverses options (propositions d'achat, solutions opensource) et préconisé le développement interne d'une nouvelle solution. 
-						Ce choix a permis de minimiser la dette technique, d'intégrer des composants Android modernes et de bâtir une architecture propre.
-						</li>
-                    </ul>
+                <div class="skill-box">
+                    <strong>Sécurité & Audit</strong>
+                    EBIOS RM, Pentest (Décompilation), Cryptographie, Audit TLS/Système.
                 </div>
-                <div class="crosscall-sub-section">
-                    <h4>Prototypage & modifications système</h4>
-                    <ul>
-                        <li><strong>INJECTION SYSTÈME :</strong>Conception et implémentation d'une solution sécurisée pour l'injection et le pilotage de services système Android (permettant l'injection de binaires signés sans redémarrage).</li>
-                        <li><strong>INTERCEPTION TLS :</strong> 
-							Afin d'étudier des solutions potentielles de sécurisation des terminaux et leur faisabilité, j'ai développé une preuve de concept permettant d'intercepter localement tous les flux TLS sur les appareils. Ainsi il m'a  été possible d'analyser les données transitant, d'évaluer les latences induites et d'identifier les contraintes techniques en vue d'une industrialisation.
-				     	</li>
-                        <li><strong>BOOTLOADER/DEMARREUR :</strong> 
-								Afin de permettre à des entreprises de personnaliser et tester leurs systèmes modifiés, 
-								j'ai altéré la vérification des signatures VBMeta. 
-								Cette modification leur offre une autonomie accrue dans le développement de leurs versions logicielles.
-						</li>
-                        <li><strong>RECOVERY :</strong> 
-							Portage d’un recovery alternatif pour copier à l’identique l’état du terminal. 
-							Cela a rendu possible la duplication fidèle de l'état du système et des données utilisateur. 
-							L'objectif étant de permettre la reproduction de bugs ou de comportements anormaux du smartphone dans les conditions les plus proches de celles d'origine.
-						</li>
-                        <li><strong>FIREWALL :</strong> J'ai développé dans la pile réseau native le blocage des flux par application.</li>
-                        <li><strong>PORTAGE :</strong> Portage des sources Qualcomm vers certains de nos terminaux, notamment le Stellar-X5. Pour cela j'ai compilé et adapté tous les composants logiciels, ce qui m'a permis d'être au niveau du prestataire de fabrication (OEM).</li>
-                        <li><strong>CARTOGRAPHIE :</strong>Développement d'un outil de cartographie des dépendances entre les sources Android pour l'analyse de l'architecture système et la simplification des développements.</li>
-                        <li><strong>RETROINGENIERIE :</strong> 
-						Décompilation et analyse de code pour identifier les spécificités de fonctionnement de certaines applications et optimiser leur intégration au système. 
-						Cela m'a permis de vérifier l'usage de certaines méthodes et de comprendre les différences de comportement pour une même application selon la marque du terminal sur lequel elle est exécutée, mais également d'adapter le comportement du smartphone afin d'améliorer l'expérience utilisateur.
-						</li>
-                        <li><strong>SUPPORT & DIVERS :</strong>Intervention lors de problèmes techniques bloquants. 
-						Je suis notamment intervenu lorsque certaines contraintes de sécurité perturbaient le mode bureau (XSPACE), ou pour aider à la gestion de flux audio ou vidéo. 
-						J'ai également effectué diverses autres modifications systèmes et applicatives.</li>
-                    </ul>
+                <div class="skill-box">
+                    <strong>Technique & Outils</strong>
+                    Android, CI/CD, Git, Docker, Linux, Java, Kotlin, Rétro-ingénierie.
                 </div>
-
-                <div class="crosscall-sub-section">
-                    <h4>Formateur interne</h4>
-                     <ul>
-                        <li><strong>BONNES PRATIQUES :</strong> 
-						Formation de différents services sur les contraintes et processus liés à l'internalisation de projets logiciels. 
-						J'ai ainsi sensibilisé 15 à 20 collègues, notamment à la rédaction de spécifications, aux processus de développement 
-						et aux contraintes techniques que peuvent presenter les différents langages (interprété, compilé, etc.) sur diverses plateformes (embarqué, Linux, etc.).
-						</li>
-                        <li><strong>CYBER :</strong>
-							Création de support et mise en place de formations à la cybersécurité, principalement sur le sujet des systèmes embarqués. 
-							J'ai pu aborder les bases cryptographiques, l'ingénierie sociale, la disponibilité, l'intégrité et les canaux auxiliaires.
-						</li>
-                        <li><strong>LEAD :</strong> 
-						Pilotage d'une équipe de techniciens validation sans expérience en programmation. 
-						J'ai assuré leur formation aux bases du développement et au travail en équipe, 
-						leur permettant ainsi d'écrire des scripts factorisés et d'utiliser un logiciel de gestion de versions (Git) efficacement.</li>
-                    </ul>
-                </div>
-
-                <div class="crosscall-sub-section">
-                    <h4>Expertise Android</h4>
-                    <ul>
-						<p>KPI (Key Performance Indicator) : Indicateurs quantifiables des performances.</p>
-                        <li><strong>KPI :</strong> 
-						Mise en place de KPI à imposer au constructeur pour garantir une certaine qualité d'usage. 
-						J'ai développé un logiciel capable de mesurer la fluidité, la capacité multitâche et la réactivité, fournissant des indicateurs reproductibles avec des scénarios d’usage de terrain.
-						Les scénarios sont diversifiés pour simuler des usages réaliste (ex: utilisation de la suite Office et Chrome, lecture audio, gestion des communications téléphoniques simultanément).						
-						</li>
-                        <li><strong>STANDARDISATION KPI :</strong> 
-						Développement d'une version 100% embarquée sous forme de librairie capable de rejouer des scénarios et d’envoyer les données via un bus standard. 
-						J'ai développé ce bus spécifiquement pour cette application afin qu'il soit simple à utiliser. Il permet de définir des modules d'interprétation et de transmission des données.
-						Cela a permis de simplifié le travail des futurs développeurs ainsi que l'intégration de la librairie.
-						</li>
-                        <li><strong>GRAPHE :</strong> Mise en place d’un programme d’analyse des similitudes entre des arborescences graphiques. L'objectif était de permettre l'automatisation de scénarios préenregistrés sur différents terminaux en détectant la correspondance entre deux UI.</li>
-                        <li><strong>CONFIGURATION HORS-LIGNE:</strong> 
-						Estimation des coûts et développement d'un programme permettant de générer et pousser des configurations signées sur des réseaux isolés d'internet, sans service Google. 
-						Cela m'a permis d'approfondir mon expertise relativement aux frameworks multi-plateformes.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item card">
-                <h3>Concepteur applicatif mobile, ANSSI <span class="date">09/2019 - 11/2020</span></h3>
-                <ul>
-                    <li><strong>DEVELOPPEMENT :</strong> Dans le cadre d'un applicatif mobile, j'ai été en charge de l'établissement du cahier des charges, de la spécification et de la prise en compte des retours utilisateur, ainsi que de la validation hiérarchique du projet.</li>
-                    <li><strong>ÉTUDE :</strong> Participation à la recherche, aux modifications et au développement d’applicatifs pour des smartphones en environnement durci.</li>
-                </ul>
-            </div>
-
-            <div class="experience-item card">
-                <h3>Ingénieur Réseaux et Télécommunications, STSI² <span class="date">01/2018 - 07/2019</span></h3>
-				<p style="font-size: 0.8em;" >STSI² : Service de modernisation des technologies du ministère de l'intérieur</p>
-				<p style="font-size: 0.8em;">PC-STORM : Système de communication interopérable, socle du "Réseau Radio du Futur" des forces de l'ordre.</p>
-                <ul>
-                    <li><strong>PC-STORM :
-						
-						</strong>Dans le cadre d’un usage multi-opérateur, il m’a été confié l’étude de faisabilité et le développement d’une application d’aide à la décision. 
-						J’ai fourni un rapport de 70 pages sur le sujet. Cette étude traitait de l'impact des différents indicateurs de performance réseaux sur les différents services, 
-						des différents moyens matériels et logiciels à disposition, mais également de la sureté de fonctionnement de l'application.
-						Un système de gestion des dépendances et d'ordonnancement automatique des processus a également été développé par mes soins.</li>
-                    
-					<li><strong>ÉTUDES PROSPECTIVES :</strong> 
-					Participation à l’étude de certaines solutions traitant de l’authentification, des communications critiques ou des diverses facettes du projet PC-STORM. 
-					Cela m'a permis de me familiariser avec les infrastructures modernes de telecommunication.</li>
-					
-                    <li><strong>RETROINGENIERIE :</strong> 
-					Tests de résistance à certaines attaques via la décompilation, permettant de récupérer certaines données ou de contourner certaines vérifications
-					(root, récupération de token, etc).</li>
-                </ul>
-            </div>
-
-             <div class="experience-item card">
-                <h3>Alternant, Natixis <span class="date">2016 - 2017</span></h3>
-                <p>Étude des outils de développement</p>
-                <ul>
-                    <li><strong>OUTILS :</strong> 
-					Participation à la recherche d'outils permettant aux équipes produits de traduire une spécification en tests concrets.
-					Évaluation et non-retenue de solutions existantes (intégration initiale complexe, faible plus-value).
-					</li>
-                    <li><strong>CI/CD :</strong> Développement et intégration à la chaîne d'intégration continue (CI) Jenkins d'un outil d'aide à la gestion des sources.</li>
-                </ul>
-             </div>
-
-             <div class="experience-item card">
-                <h3>Stagiaire, Sycorax <span class="date">50 jours 2016</span></h3>
-                <ul>
-                    <li>
-					Résolution de problèmes techniques et support client.
-					J'ai réalisé des interventions chez les clients pour diagnostiquer et résoudre des problèmes divers (ex: reconfiguration DHCP, difficultés de connexion aux services locaux, configuration de machines).
-					</li>
-                    <li>Développement en PHP d’un système d’automatisation de génération et d’envoi des factures.</li>
-                </ul>
-             </div>
-             <!-- <div class="experience-item card">
-                <h3>Divers postes de manutention en usine<span class="date">...</span></h3>
-             </div> -->
-        </section>
-         <section>
-            <h2>PROJETS PERSONNELS</h2>
-            <div class="project-block card">
-                <ul>
-                    <li>Mise en place d'infrastructures sécurisées multi-serveurs, basées sur Docker, Firewall OPNsense et VPN, avec protection contre les déplacements latéraux.</li>
-                    <li>Compilation et installation d'un serveur Ollama afin d’utiliser un LLM local sur un smartphone.</li>
-                    <li>Acquisition des bases du deep learning, étant intéressé par les petits modèles spécialisés. (sources : Machine Learnia et divers)</li>
-                    <li>
-					Création d'un prototype d'application de SMS (type 0) sécurisé, non persistant, invisible dans la base de données des messages, un échange Diffie-Hellman devait servir à partager un secret commun. 
-					La partie cryptographique n'a jamais été implémentée par manque de temps et car l'objectif était de vérifier la faisabilité du projet. 
-					L'envoi et la réception de SMS avec une clé de test fut fonctionnel.
-					</li>
-                    <li>Création d’un petit challenge stéganographique.</li>
-                    <li>Application de communication maillée PTT via le Wi-Fi Direct.</li>
-                    <li>Application Web d'analyse sémantique (AngularJS ainsi SpringBoot).</li>
-                    <li>Création d'un véhicule radiocommandé embarquant une caméra contrôlable via internet.</li>
-                    <li>
-						Système portatif de collecte et de consultation de données médicales embarqué sur le patient. Analyse de la fréquence cardiaque, du flux respiratoire et de la température.
-					</li>
-                </ul>
-            </div>
-        </section>
-         <section>
-            <h2>COMPÉTENCES</h2>
-            <div class="skill-block card">
-                <ul>
-                    <li>Gestion de projet</li>
-                    <li>Coordination d'équipes</li>
-                    <li>Accompagnement pour spécification</li>
-                    <li>Agile, Gantt, PERT</li>
-                    <!--<li>EBIOS</li>-->
-                    <li>Java</li>
-                    <li>Smali</li>
-                    <li>C/C++</li>
-                    <li>Rétroingénierie</li>
-                    <li>Kotlin</li>
-                    <li>Cybersécurité</li>
-                    <li>Cryptographie</li>
-                    <li>Réseau & Télécommunication</li>
-                    <li>C.I/C.D</li>
-                    <li>Git</li>
-                    <li>Docker</li>
-                    <li>Linux…</li>
-                </ul>
             </div>
         </section>
 
-         <section>
-            <h2>FORMATIONS</h2>
-	<div class="formation-block card">
-		<ul>
-			<li>
-				<div class="formation-item"> <strong>CNAM, Master (SEMS), Systèmes Embarqués Mobiles et Sûrs</strong>
-					<span class="date">2017-2019</span>
-				</div>
-			</li>
-			<li>
-				<div class="formation-item"> <strong>Paris VIII, Licence Professionnelle (CSID), Concepteur de Systèmes d'Information, Développeur Agile</strong>
-					<span class="promo-rank">3<sup>ème</sup> de promotion</span>
-					<span class="date">2016-2017</span>
-				</div>
-			</li>
-			<li>
-				<div class="formation-item"> <strong>UPEC, DUT Réseau & Télécommunication</strong>
-					<span class="date">2015-2016</span>
-				</div>
-			</li>
-		</ul>
-	</div>
+        <section>
+            <h3>Diplômes & Transmission</h3>
+            <ul>
+                <li><strong>Cursus Académique :</strong> Master CNAM (SEM) | Licence Pro Paris VIII (Major de promotion).</li>
+                <li><strong>Rôle de Formateur :</strong> Transmission de savoirs techniques (cyber, cryptographie) auprès de publics internes non-experts et techniques.</li>
+                <li><strong>Projets Personnels :</strong> Gestion de multi-serveurs sécurisés (Firewall OPNsense, VPN), veille active sur l'IA locale (Ollama).</li>
+            </ul>
         </section>
     </div>
 </body>
