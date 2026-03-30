@@ -1,207 +1,128 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alan Vidal - Manager Cybersécurité</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #1e293b;
-            --accent: #3b82f6;
-            --text: #334155;
-            --light: #f8fafc;
-            --border: #e2e8f0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text);
-            line-height: 1.5;
-            margin: 0;
-            padding: 30px 15px;
-            background: #f1f5f9;
-        }
-
-        .cv-container {
-            max-width: 850px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 30px;
-        }
-
-        .name-area h1 { margin: 0; font-size: 28px; color: var(--primary); }
-        .name-area h2 { margin: 5px 0 0; color: var(--accent); font-size: 18px; font-weight: 600; }
-
-        .contact-info { text-align: right; font-size: 13px; color: #64748b; }
-
-        .intro {
-            font-size: 14px;
-            margin-bottom: 30px;
-            padding: 15px;
-            background: var(--light);
-            border-radius: 6px;
-        }
-
-        section { margin-bottom: 25px; }
-
-        h3 {
-            font-size: 14px;
-            text-transform: uppercase;
-            color: var(--primary);
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-            margin-bottom: 15px;
-            padding-bottom: 2px;
-        }
-
-        .job { margin-bottom: 20px; }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 700;
-            font-size: 14px;
-            color: var(--primary);
-        }
-
-        .job-title {
-            font-weight: 600;
-            font-size: 14px;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-
-        ul { padding-left: 20px; margin: 5px 0; }
-        li { margin-bottom: 5px; font-size: 13px; }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .skill-box {
-            padding: 12px;
-            background: var(--light);
-            border-radius: 4px;
-            font-size: 13px;
-        }
-
-        .skill-box strong { display: block; margin-bottom: 5px; color: var(--primary); font-size: 12px; text-transform: uppercase; }
-
-        @media print {
-            body { background: white; padding: 0; }
-            .cv-container { box-shadow: none; padding: 10px; }
-        }
-    </style>
-</head>
-<body>
-    <div class="cv-container">
-        <header>
-            <div class="name-area">
-                <h1>Alan Vidal</h1>
-                <h2>Manager Cybersécurité & tech lead</h2>
-            </div>
-            <div class="contact-info">
-                <div>06 34 20 70 80 | alan.vidal@ik.me</div>
-                <div>Chelles (77) | Permis B</div>
-            </div>
-        </header>
-
-        <div class="intro">
-            Spécialiste en sécurité mobile et architecture logicielle. Après plusieurs expériences au sein de services de l'État (ANSSI, Gendarmerie), je souhaite aujourd'hui encadrer des projets et des équipes techniques pour assurer la protection des systèmes et la qualité des développements.
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>CV - Alan Vidal</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body { font-family: 'Inter', system-ui, sans-serif; background: #f1f5f9; display: flex; justify-content: center; padding: 20px; margin: 0; }
+            .cv-paper { box-sizing: border-box; width: 210mm; max-width: 210mm; min-height: 297mm; background: var(--cv-paper-bg); --cv-paper-padding-y: 18mm; --cv-paper-padding-x: 13mm; padding: var(--cv-paper-padding-y) var(--cv-paper-padding-x); box-shadow: 0 5px 15px rgba(0,0,0,0.1); color: var(--cv-text); line-height: 1.5; text-rendering: optimizeLegibility; font-optical-sizing: auto; -webkit-print-color-adjust: exact; print-color-adjust: exact; --cv-accent: #2563eb; --cv-text: #334155; --cv-heading: #1e293b; --cv-muted: #64748b; --cv-muted2: #3f4d5c; --cv-paper-bg: #ffffff; --cv-intro-bg: #f8fafc; --cv-intro-radius: 6px; --cv-chip-bg: rgba(37, 99, 235, 0.12); --cv-strip: rgba(37, 99, 235, 0.22); --cv-skill-bg: #f8fafc; --cv-skill-border: #e2e8f0; --cv-skill-heading: #1e293b; --cv-skill-radius: 6px; --cv-section-rule: 2px; --cv-fs-h1: 28px; --cv-fs-subtitle: 18px; --cv-fs-contact: 12px; --cv-fs-links: 11px; --cv-fs-section: 12px; --cv-fs-intro: 13px; --cv-fs-job: 10.5px; --cv-fs-jobhead: 11px; --cv-fs-meta: 10px; --cv-fs-role: 10px; --cv-fs-detail: 10px; --cv-fs-li: 10px; --cv-fs-skill: 12px; --cv-fs-skillcat: 10px; --cv-fs-chip: 9px; --cv-fs-misc: 12px; }
+            .cv-paper[data-cv-typography="tight"] { --cv-fs-h1: 24px; --cv-fs-subtitle: 16px; --cv-fs-contact: 11px; --cv-fs-links: 10px; --cv-fs-section: 11px; --cv-fs-intro: 11.5px; --cv-fs-job: 9.5px; --cv-fs-jobhead: 10px; --cv-fs-meta: 9.5px; --cv-fs-role: 9.5px; --cv-fs-detail: 9.5px; --cv-fs-li: 9.5px; --cv-fs-skill: 11px; --cv-fs-skillcat: 9.5px; --cv-fs-chip: 8.5px; --cv-fs-misc: 11px; }
+            .cv-paper[data-cv-typography="readable"] { --cv-fs-h1: 30px; --cv-fs-subtitle: 19px; --cv-fs-contact: 12.5px; --cv-fs-links: 11.5px; --cv-fs-section: 12.5px; --cv-fs-intro: 14px; --cv-fs-job: 11px; --cv-fs-jobhead: 11.5px; --cv-fs-meta: 10.5px; --cv-fs-role: 10.5px; --cv-fs-detail: 10.5px; --cv-fs-li: 10.5px; --cv-fs-skill: 12.5px; --cv-fs-skillcat: 10.5px; --cv-fs-chip: 9.5px; --cv-fs-misc: 12.5px; }
+            .cv-paper[data-cv-typography="generous"] { --cv-fs-h1: 32px; --cv-fs-subtitle: 20px; --cv-fs-contact: 13px; --cv-fs-links: 12px; --cv-fs-section: 13px; --cv-fs-intro: 14.5px; --cv-fs-job: 11.5px; --cv-fs-jobhead: 12px; --cv-fs-meta: 11px; --cv-fs-role: 11px; --cv-fs-detail: 11px; --cv-fs-li: 11px; --cv-fs-skill: 13px; --cv-fs-skillcat: 11px; --cv-fs-chip: 10px; --cv-fs-misc: 13px; }
+            .cv-paper[data-cv-typography="max"] { --cv-fs-h1: 34px; --cv-fs-subtitle: 21px; --cv-fs-contact: 13.5px; --cv-fs-links: 12.5px; --cv-fs-section: 13.5px; --cv-fs-intro: 15px; --cv-fs-job: 12px; --cv-fs-jobhead: 12.5px; --cv-fs-meta: 11.5px; --cv-fs-role: 11.5px; --cv-fs-detail: 11.5px; --cv-fs-li: 11.5px; --cv-fs-skill: 13.5px; --cv-fs-skillcat: 11.5px; --cv-fs-chip: 10.5px; --cv-fs-misc: 14px; }
+            .cv-paper[data-cv-theme="ocean"] { --cv-accent: #0d9488; --cv-chip-bg: rgba(13, 148, 136, 0.15); --cv-strip: rgba(13, 148, 136, 0.28); }
+            .cv-paper[data-cv-theme="ember"] { --cv-accent: #c2410c; --cv-paper-bg: #fffbf7; --cv-text: #44403c; --cv-heading: #292524; --cv-muted: #78716c; --cv-muted2: #57534e; --cv-intro-bg: #fff7ed; --cv-chip-bg: rgba(194, 65, 12, 0.14); --cv-strip: rgba(194, 65, 12, 0.32); --cv-skill-bg: #fff7ed; --cv-skill-border: #fed7aa; --cv-skill-heading: #431407; }
+            .cv-paper[data-cv-theme="aurora"] { --cv-accent: #7c3aed; --cv-paper-bg: #faf5ff; --cv-text: #575569; --cv-heading: #4c1d95; --cv-muted: #7c6fa3; --cv-muted2: #5b4f7a; --cv-intro-bg: #f3e8ff; --cv-chip-bg: rgba(124, 58, 237, 0.16); --cv-strip: rgba(109, 40, 217, 0.3); --cv-skill-bg: #f5f3ff; --cv-skill-border: #ddd6fe; --cv-skill-heading: #5b21b6; }
+            .cv-paper[data-cv-theme="moss"] { --cv-accent: #3f6212; --cv-paper-bg: #f7faf5; --cv-text: #3d4426; --cv-heading: #1a2e05; --cv-muted: #5c6640; --cv-muted2: #4a5530; --cv-intro-bg: #eef4e6; --cv-chip-bg: rgba(63, 98, 18, 0.14); --cv-strip: rgba(63, 98, 18, 0.26); --cv-skill-bg: #f2f6ec; --cv-skill-border: #d4e0c4; --cv-skill-heading: #1a2e05; }
+            .cv-paper[data-cv-theme="midnight"] { --cv-accent: #fbbf24; --cv-paper-bg: #0f172a; --cv-text: #cbd5e1; --cv-heading: #f8fafc; --cv-muted: #94a3b8; --cv-muted2: #64748b; --cv-intro-bg: #1e293b; --cv-chip-bg: rgba(251, 191, 36, 0.14); --cv-strip: rgba(251, 191, 36, 0.22); --cv-skill-bg: #1e293b; --cv-skill-border: #334155; --cv-skill-heading: #e2e8f0; }
+            .cv-paper[data-cv-theme="gazette"] { --cv-accent: #b91c1c; --cv-paper-bg: #faf6ee; --cv-text: #292524; --cv-heading: #1c1917; --cv-muted: #57534e; --cv-muted2: #44403c; --cv-intro-bg: #f5f0e6; --cv-chip-bg: rgba(185, 28, 28, 0.1); --cv-strip: rgba(28, 25, 23, 0.18); --cv-skill-bg: #fffcf5; --cv-skill-border: #e7e0d4; --cv-skill-heading: #1c1917; }
+            .cv-paper[data-cv-theme="studio"] { --cv-accent: #0a0a0a; --cv-paper-bg: #fafafa; --cv-text: #262626; --cv-heading: #0a0a0a; --cv-muted: #525252; --cv-muted2: #404040; --cv-intro-bg: #f5f5f5; --cv-chip-bg: #e5e5e5; --cv-strip: rgba(10,10,10,0.22); --cv-skill-bg: #ffffff; --cv-skill-border: #0a0a0a; --cv-skill-heading: #0a0a0a; --cv-intro-radius: 0; --cv-skill-radius: 2px; --cv-section-rule: 3px; }
+            .cv-paper[data-cv-density="compact"] { --cv-paper-padding-y: 14mm; --cv-paper-padding-x: 10mm; }
+            .cv-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; gap: 14px; }
+            h1 { margin: 0; font-size: var(--cv-fs-h1); color: var(--cv-heading); }
+            .cv-subtitle { margin: 5px 0 0; color: var(--cv-accent); font-size: var(--cv-fs-subtitle); font-weight: 600; }
+            .contact-info-cv { text-align: right; font-size: var(--cv-fs-contact); color: var(--cv-muted); }
+            .cv-header-links { margin-top: 6px; font-size: var(--cv-fs-links); }
+            .cv-header-links a { color: var(--cv-accent); }
+            .intro-cv { width: 100%; margin: 0; padding: 14px 18px; font-size: var(--cv-fs-intro); line-height: 1.6; color: var(--cv-text); text-align: start; white-space: pre-wrap; box-sizing: border-box; background: var(--cv-intro-bg); border: 1px solid var(--cv-skill-border); border-top: var(--cv-section-rule) solid var(--cv-accent); border-radius: var(--cv-intro-radius); }
+            .cv-paper[data-cv-theme="studio"] .intro-cv { border-width: 2px; border-top-width: var(--cv-section-rule); }
+            .section-cv { margin-bottom: 22px; }
+            .section-cv__heading { font-size: var(--cv-fs-section); text-transform: uppercase; letter-spacing: 0.06em; color: var(--cv-heading); border-bottom: var(--cv-section-rule) solid var(--cv-accent); display: inline-block; margin: 0 0 10px 0; padding-bottom: 2px; font-weight: 700; }
+            .section-cv--experience .section-cv__heading, .section-cv--projects .section-cv__heading, .section-cv--education .section-cv__heading { margin-bottom: 7px; }
+            .experiences-cv, .projects-cv, .education-cv { display: flex; flex-direction: column; gap: 4px; }
+            .job-cv, .project-cv, .edu-cv { margin: 0; padding: 3px 0 3px 10px; border-left: 2px solid var(--cv-strip); font-size: var(--cv-fs-job); line-height: 1.38; }
+            .job-cv__head, .project-cv__head, .edu-cv__head { display: block; font-weight: 600; font-size: var(--cv-fs-jobhead); color: var(--cv-heading); line-height: 1.34; }
+            .job-cv__name, .project-cv__name, .edu-cv__name { font-weight: 700; }
+            .job-cv__meta, .project-cv__meta, .edu-cv__meta { font-weight: 500; color: var(--cv-muted); font-size: var(--cv-fs-meta); }
+            .job-cv__role { margin-top: 2px; font-weight: 600; font-size: var(--cv-fs-role); color: var(--cv-accent); line-height: 1.3; }
+            .job-cv__location { margin-top: 1px; font-size: var(--cv-fs-meta); font-weight: 500; color: var(--cv-muted); line-height: 1.3; }
+            .project-cv__detail, .edu-cv__detail { margin-top: 2px; color: var(--cv-muted2); font-size: var(--cv-fs-detail); line-height: 1.38; }
+            .job-cv-subsection { margin-top: 4px; }
+            .job-cv-subsection:first-child { margin-top: 2px; }
+            .job-subheading-cv { font-size: var(--cv-fs-detail); font-weight: 700; color: var(--cv-heading); margin: 0 0 2px; line-height: 1.34; }
+            .job-cv-subsection ul { margin: 2px 0 0; padding-left: 14px; }
+            .cv-paper .job-cv li { font-size: var(--cv-fs-li); line-height: 1.38; margin-bottom: 1px; }
+            .cv-paper[data-cv-density="compact"] .section-cv--experience .section-cv__heading, .cv-paper[data-cv-density="compact"] .section-cv--projects .section-cv__heading, .cv-paper[data-cv-density="compact"] .section-cv--education .section-cv__heading { margin-bottom: 6px; }
+            .cv-paper[data-cv-density="compact"] .experiences-cv, .cv-paper[data-cv-density="compact"] .projects-cv, .cv-paper[data-cv-density="compact"] .education-cv { gap: 4px; }
+            .cv-paper[data-cv-density="compact"] .job-cv, .cv-paper[data-cv-density="compact"] .project-cv, .cv-paper[data-cv-density="compact"] .edu-cv { padding: 2px 0 2px 8px; font-size: calc(var(--cv-fs-job) * 0.9524); }
+            .cv-paper[data-cv-density="compact"] .job-cv__head, .cv-paper[data-cv-density="compact"] .project-cv__head, .cv-paper[data-cv-density="compact"] .edu-cv__head { font-size: calc(var(--cv-fs-jobhead) * 0.9545); }
+            .cv-paper[data-cv-density="compact"] .job-cv__meta, .cv-paper[data-cv-density="compact"] .project-cv__meta, .cv-paper[data-cv-density="compact"] .edu-cv__meta { font-size: calc(var(--cv-fs-meta) * 0.95); }
+            .cv-paper[data-cv-density="compact"] .job-cv__role { font-size: calc(var(--cv-fs-role) * 0.95); }
+            .cv-paper[data-cv-density="compact"] .job-cv__location { font-size: calc(var(--cv-fs-meta) * 0.9); }
+            .cv-paper[data-cv-density="compact"] .project-cv__detail, .cv-paper[data-cv-density="compact"] .edu-cv__detail { font-size: calc(var(--cv-fs-detail) * 0.95); }
+            .cv-paper[data-cv-density="compact"] .job-subheading-cv { font-size: calc(var(--cv-fs-detail) * 0.95); }
+            .cv-paper[data-cv-density="compact"] .job-cv li { font-size: calc(var(--cv-fs-li) * 0.95); }
+            ul { padding-left: 18px; margin: 5px 0; }
+            li { margin-bottom: 3px; }
+            .skills-grid-cv { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; align-items: start; }
+            .skill-box-cv { box-sizing: border-box; padding: 9px 10px; background: var(--cv-skill-bg); border-radius: var(--cv-skill-radius); font-size: var(--cv-fs-skill); line-height: 1.42; color: var(--cv-text); border: 1px solid var(--cv-skill-border); box-shadow: inset 3px 0 0 0 var(--cv-accent); word-break: break-word; overflow-wrap: break-word; }
+            .cv-paper[data-cv-theme="studio"] .skill-box-cv { border-width: 2px; }
+            .skill-box-cv strong { display: block; margin: 0 0 3px; padding-bottom: 2px; line-height: 1.25; color: var(--cv-skill-heading); font-size: var(--cv-fs-skillcat); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--cv-skill-border); }
+            .skill-chips-cv { display: flex; flex-wrap: wrap; gap: 3px; margin: 4px 0 3px; row-gap: 3px; }
+            .skill-chip-cv { font-size: var(--cv-fs-chip); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.2; padding: 1px 5px; border-radius: 3px; background: var(--cv-chip-bg); color: var(--cv-accent); }
+            .cv-keyword-hit { background: #fef08a; color: #422006; padding: 0 2px; border-radius: 2px; }
+            .cert-cv { font-size: var(--cv-fs-misc); margin-bottom: 8px; color: var(--cv-text); }
+            li.lang-cv { font-size: var(--cv-fs-misc); margin-bottom: 4px; color: var(--cv-text); }
+            .cv-paper[data-cv-density="compact"] h1 { font-size: calc(var(--cv-fs-h1) * 0.7857); }
+            .cv-paper[data-cv-density="compact"] .cv-subtitle { font-size: calc(var(--cv-fs-subtitle) * 0.8333); }
+            .cv-paper[data-cv-density="compact"] .section-cv { margin-bottom: 13px; }
+            .cv-paper[data-cv-density="compact"] .intro-cv { font-size: calc(var(--cv-fs-intro) * 0.9231); padding: 10px 12px; }
+            .cv-paper[data-cv-density="compact"] li { font-size: calc(var(--cv-fs-misc) * 0.9167); }
+            @page { size: A4; margin: 0; }
+            @media print {
+                body { background: white !important; padding: 0 !important; display: block !important; }
+                .cv-paper { box-shadow: none !important; width: 210mm !important; max-width: 210mm !important; min-height: auto !important; padding: var(--cv-paper-padding-y) var(--cv-paper-padding-x) !important; margin: 0 auto !important; }
+                .skills-grid-cv { grid-template-columns: repeat(3, 1fr) !important; gap: 11px !important; }
+                .section-cv > .section-cv__heading { page-break-after: avoid; break-after: avoid-page; }
+                .cv-skills-stack > .section-cv__heading { page-break-after: avoid; break-after: avoid-page; }
+                .cv-skills-stack > .skills-grid-cv { page-break-before: avoid; break-before: avoid-page; }
+                .job-cv { break-inside: auto; page-break-inside: auto; }
+                .skill-box-cv { break-inside: avoid; page-break-inside: avoid; }
+                .intro-cv, .skill-box-cv { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="cv-paper" data-cv-theme="midnight" data-cv-density="compact" data-cv-typography="generous">
+            
+                    <div class="cv-header">
+                        <div class="name-area"><h1>Alan Vidal</h1><p class="cv-subtitle">Expert cybersécurité produits</p></div>
+                        <div class="contact-info-cv"><div>alan.vidal@ik.me | 06 34 20 70 80</div><div>4 rue Auguste Laurent, Chelles 77500</div><div class="cv-header-links"><a href="https://www.linkedin.com/in/alan-vidal-3608a1a9" rel="noopener noreferrer">LinkedIn</a></div></div>
+                    </div>
+                    <section class="section-cv"><div class="intro-cv">Expert Cybersécurité produit : Systèmes Critiques &amp; Embarqués.<br>
+Durcissement OS, Secure Boot et analyse de risques produit. Spécialisé dans la conception de solutions sécurisées et sûres pour la protection civile et la défense.</div></section>
+                    <section class="section-cv section-cv--experience" aria-labelledby="sec-exp"><h2 class="section-cv__heading" id="sec-exp">Parcours Professionnel</h2><div class="experiences-cv">
+                        <div class="job-cv">
+                            <div class="job-cv__head"><span class="job-cv__name">SeeHaptic</span><span class="job-cv__meta"> · 09/2025 — 03/2026</span></div>
+                            <div class="job-cv__role">Architecte Qualité &amp; Cyber</div>
+                            
+                            <div class="job-cv-subsection"><ul><li>Analyse de vulnérabilités, risques côté produit, préconisations de correctifs.</li><li>Campagnes de tests, dashboards, KPI, arbitrage des correctifs avec les équipes.</li></ul></div><div class="job-cv-subsection"><ul></ul></div>
+                        </div>
+                        <div class="job-cv">
+                            <div class="job-cv__head"><span class="job-cv__name">Crosscall</span><span class="job-cv__meta"> · 05/2021 — 07/2025</span></div>
+                            <div class="job-cv__role">Architecte système Android</div>
+                            <div class="job-cv__location">Île-de-France · Télétravail</div>
+                            <div class="job-cv-subsection"><div class="job-subheading-cv">Organisation de projets et d&#39;équipe</div><ul><li>Pilotage transverse : Gestion de projet et d&#39;équipe, incluant le pilotage du projet NEO (coordination OEM, ESN et équipes internes).</li><li>Ingénierie documentaire : Création de documents d&#39;architecture et rédaction des spécifications techniques jusqu&#39;aux sous-traitants.</li><li>Formateur interne : Formation sur l’internalisation du développement logiciel et la cybersécurité des systèmes embarqués, incluant les piliers de la cybersécurité et la cryptographie.</li><li>Encadrement technique : Mise en place d&#39;une équipe de validation formée au développement en équipe.</li></ul></div><div class="job-cv-subsection"><div class="job-subheading-cv">Expertise technique</div><ul><li>Développement Framework : Conception et PoC de nouvelles fonctionnalités dans le Framework Android et portage QCOM .</li><li>Sécurisation système : Mise en place de mesures de sécurité sur les terminaux : services système signés, bootloader et firewall natif.</li><li>Analyse &amp; Rétro-ingénierie : Interception TLS sur le terminal, analyse du comportement des sources et des binaires.</li><li>Expertise système : Étude d&#39;architecture du mode bureau via une analyse comparative (achat, open source, dev interne) pour définir une stratégie technique optimisée, sans dette technique.</li></ul></div><div class="job-cv-subsection"><div class="job-subheading-cv">Qualité et performance</div><ul><li>Analytique &amp; KPI : Élaboration de KPI, création d&#39;outils de mesure de performance et analyse de l&#39;usage terrain (KPI constructeur).</li><li>Automatisation : Mise en place et conception de systèmes automatisés de validation et d&#39;automatisation d&#39;UI.</li><li>Outils industriels : Création d&#39;une bibliothèque embarquée de scénarios pour la validation et le suivi de la qualité produit.</li></ul></div>
+                        </div>
+                        <div class="job-cv">
+                            <div class="job-cv__head"><span class="job-cv__name">ANSSI, Agence Nationale de la Sécurité des Systèmes d&#39;Information</span><span class="job-cv__meta"> · 10/2019 — 11/2020</span></div>
+                            <div class="job-cv__role">Concepteur développeur Android</div>
+                            <div class="job-cv__location">Paris</div>
+                            <div class="job-cv-subsection"><ul><li>DEV : cahier des charges, spécifications, retours utilisateurs, validation hiérarchique du projet applicatif mobile.</li><li>ÉTUDE : recherche, modifications et développement d&#39;applicatifs pour smartphones en environnement durci.</li></ul></div>
+                        </div>
+                        <div class="job-cv">
+                            <div class="job-cv__head"><span class="job-cv__name">ST(SI)², Service des technologies et des systèmes d&#39;information de la Sécurité intérieure</span><span class="job-cv__meta"> · 01/2018 — 09/2019</span></div>
+                            <div class="job-cv__role">Ingénieur développeur réseaux et télécommunications</div>
+                            
+                            <div class="job-cv-subsection"><ul><li>PC-STORM : étude de faisabilité et appli d&#39;aide à la décision multi-opérateur ; rapport 69 pages (KPI réseaux, moyens matériels/logiciels, sûreté) ; gestion des dépendances et ordonnancement des processus.</li><li>ÉTUDES PROSPECTIVES : authentification, communications critiques, projet PC-STORM ; renfort télécoms.</li><li>RÉTROINGÉNIERIE : tests de résistance (décompilation, données, contournements — root, tokens, etc.).</li></ul></div>
+                        </div>
+                        <div class="job-cv">
+                            <div class="job-cv__head"><span class="job-cv__name">Natixis</span><span class="job-cv__meta"> · 2016 — 2017</span></div>
+                            <div class="job-cv__role">Ingénieur outils de développement</div>
+                            <div class="job-cv__location">Charenton-le-Pont</div>
+                            <div class="job-cv-subsection"><ul><li>OUTILS : recherche d&#39;outils pour traduire spécifications en tests concrets (Corporate &amp; Investment Banking).</li><li>CI/CD : intégration Jenkins d&#39;un outil d&#39;aide à la gestion des sources.</li></ul></div>
+                        </div></div></section><section class="section-cv section-cv--skills" aria-labelledby="sec-skills"><div class="cv-skills-stack"><h2 class="section-cv__heading" id="sec-skills">Compétences</h2><div class="skills-grid-cv"><div class="skill-box-cv"><strong>Pilotage &amp; organisation</strong><div class="skill-chips-cv"><span class="skill-chip-cv">Coordination</span><span class="skill-chip-cv">Gestion de projet</span></div>Pilotage de prestataires OEM/ESN, rédaction de cahiers des charges et spécifications, documents d&#39;architecture. Création de KPI et de dashboards.</div><div class="skill-box-cv"><strong>Cybersécurité</strong><div class="skill-chips-cv"><span class="skill-chip-cv">Systemes embarqués</span><span class="skill-chip-cv">Réseaux</span></div>Analyse de vulnérabilités, risques produit, cryptographie, rétro-ingénierie, Secure Boot, pentests, gestion des flux et des ports.</div><div class="skill-box-cv"><strong>Développement &amp; plateformes</strong><div class="skill-chips-cv"><span class="skill-chip-cv">Architecture</span><span class="skill-chip-cv">devTools</span></div>Android, Java, Kotlin, Smali, C / C++, Git, CI/CD, Linux, Docker, opnsense.</div></div></div></section><section class="section-cv section-cv--projects" aria-labelledby="sec-proj"><h2 class="section-cv__heading" id="sec-proj">Projets</h2><div class="projects-cv"><div class="project-cv"><div class="project-cv__head"><span class="project-cv__name">Infra perso : Docker, OPNsense, VPN.</span></div><div class="project-cv__detail">Mise en place et gestion d&#39;infrastructures multi-serveurs sécurisées (Docker, Firewall OPNsense, VPN).</div></div><div class="project-cv"><div class="project-cv__head"><span class="project-cv__name">Exploration IA</span></div><div class="project-cv__detail">Création de jeux et d&#39;applications permettant de coupler code prédictible et LLM.</div></div><div class="project-cv"><div class="project-cv__head"><span class="project-cv__name">Développements divers</span></div><div class="project-cv__detail">Développement d’applications axées sur la sécurité et la communication (SMS sécurisés non persistants, communication maillée, challenges stéganographiques).</div></div></div></section><section class="section-cv section-cv--education" aria-labelledby="sec-edu"><h2 class="section-cv__heading" id="sec-edu">Diplômes &amp; Transmission</h2><div class="education-cv"><div class="edu-cv"><div class="edu-cv__head"><span class="edu-cv__name">CNAM</span><span class="edu-cv__meta"> · 2017 — 2019</span></div><div class="edu-cv__detail">Master Informatique — Systèmes embarqués et mobiles sûrs (SEMS)</div></div><div class="edu-cv"><div class="edu-cv__head"><span class="edu-cv__name">Paris VIII</span><span class="edu-cv__meta"> · 2016 — 2017</span></div><div class="edu-cv__detail">Licence professionnelle SI / Développement — 3e de promotion</div></div><div class="edu-cv"><div class="edu-cv__head"><span class="edu-cv__name">UPEC</span><span class="edu-cv__meta"> · 2015 — 2016</span></div><div class="edu-cv__detail">DUT Réseau &amp; télécommunications</div></div></div></section>
         </div>
-
-        <section>
-            <h3>Parcours Professionnel</h3>
-
-            <div class="job">
-                <div class="job-header">
-                    <span>SeeHaptic</span>
-                    <span>09/2025 — Présent</span>
-                </div>
-                <div class="job-title">Architecte Qualité Logiciel et Cyber</div>
-                <ul>
-                    <li><strong>Sécurité des solutions :</strong> Analyse de vulnérabilités, évaluation des risques produits et préconisations de mesures correctives.</li>
-                    <li><strong>Assurance Qualité (QA) :</strong> Pilotage et supervision des campagnes de tests. Mise en place de Dashboards, définition de KPI et synchronisation des équipes pour la priorisation des correctifs.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <span>Crosscall</span>
-                    <span>05/2021 — 08/2025</span>
-                </div>
-                <div class="job-title">Chef de Projet Technique & Architecte Android</div>
-                <ul>
-                    <li><strong>Gestion de projet :</strong> Pilotage opérationnel du projet NEO (terminaux sécurisés). Coordination de multiples partenaires (OEM, ESN) et d'équipes internes. Suivi du planning et respect des jalons critiques.</li>
-                    <li><strong>Management & Organisation :</strong> Encadrement d'une équipe de techniciens de validation. Mise en place de méthodes de travail collaboratif (Git) et formation aux standards de développement.</li>
-                    <li><strong>Estimation & Pilotage budgétaire :</strong> Chiffrage financier des programmes de gestion de configurations sur réseaux privés. Arbitrage technique (Achat vs Open Source) pour la réduction de la dette technique.</li>
-                    <li><strong>Expertise & Transmission :</strong> Prototypage de solutions critiques (firewall applicatif, interception TLS, injection système). **Formateur interne** sur les enjeux de cryptographie et d'intégrité logicielle.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <span>ANSSI</span>
-                    <span>09/2019 — 11/2020</span>
-                </div>
-                <div class="job-title">Concepteur d'Applications Mobiles Sécurisées</div>
-                <ul>
-                    <li><strong>Gestion de projet applicatif :</strong> Rédaction du cahier des charges, spécification détaillée des besoins utilisateurs et validation hiérarchique.</li>
-                    <li><strong>R&D Mobile :</strong> Étude et développement d’applicatifs sécurisés pour smartphones en environnement durci.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <span>STSI² (Gendarmerie / Police)</span>
-                    <span>01/2018 — 07/2019</span>
-                </div>
-                <div class="job-title">Ingénieur R&T - Sécurité</div>
-                <ul>
-                    <li><strong>Aide à la décision :</strong> Réalisation d'un rapport d'étude de faisabilité de 69 pages sur une application multi-opérateur. Analyse de l'impact des KPI réseau sur les usages terrain.</li>
-                    <li><strong>Audit de sécurité :</strong> Pentest par décompilation pour identifier les contournements possibles et les risques de fuites de données. Ordonnancement de processus complexes.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h3>Compétences</h3>
-            <div class="skills-grid">
-                <div class="skill-box">
-                    <strong>Pilotage & Management</strong>
-                    Agile, Budget, Planning (Gantt/PERT), Coordination d'ESN/OEM, KPI.
-                </div>
-                <div class="skill-box">
-                    <strong>Sécurité & Audit</strong>
-                    EBIOS RM, Pentest (Décompilation), Cryptographie, Audit TLS/Système.
-                </div>
-                <div class="skill-box">
-                    <strong>Technique & Outils</strong>
-                    Android, CI/CD, Git, Docker, Linux, Java, Kotlin, Rétro-ingénierie.
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h3>Diplômes & Transmission</h3>
-            <ul>
-                <li><strong>Cursus Académique :</strong> Master CNAM (SEM) | Licence Pro Paris VIII (Major de promotion).</li>
-                <li><strong>Rôle de Formateur :</strong> Transmission de savoirs techniques (cyber, cryptographie) auprès de publics internes non-experts et techniques.</li>
-                <li><strong>Projets Personnels :</strong> Gestion de multi-serveurs sécurisés (Firewall OPNsense, VPN), veille active sur l'IA locale (Ollama).</li>
-            </ul>
-        </section>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
