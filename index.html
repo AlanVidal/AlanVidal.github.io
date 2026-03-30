@@ -1,128 +1,456 @@
 <!DOCTYPE html>
-    <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>CV - Alan Vidal</title>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-        <style>
-            body { font-family: 'Inter', system-ui, sans-serif; background: #f1f5f9; display: flex; justify-content: center; padding: 20px; margin: 0; }
-            .cv-paper { box-sizing: border-box; width: 210mm; max-width: 210mm; min-height: 297mm; background: var(--cv-paper-bg); --cv-paper-padding-y: 18mm; --cv-paper-padding-x: 13mm; padding: var(--cv-paper-padding-y) var(--cv-paper-padding-x); box-shadow: 0 5px 15px rgba(0,0,0,0.1); color: var(--cv-text); line-height: 1.5; text-rendering: optimizeLegibility; font-optical-sizing: auto; -webkit-print-color-adjust: exact; print-color-adjust: exact; --cv-accent: #2563eb; --cv-text: #334155; --cv-heading: #1e293b; --cv-muted: #64748b; --cv-muted2: #3f4d5c; --cv-paper-bg: #ffffff; --cv-intro-bg: #f8fafc; --cv-intro-radius: 6px; --cv-chip-bg: rgba(37, 99, 235, 0.12); --cv-strip: rgba(37, 99, 235, 0.22); --cv-skill-bg: #f8fafc; --cv-skill-border: #e2e8f0; --cv-skill-heading: #1e293b; --cv-skill-radius: 6px; --cv-section-rule: 2px; --cv-fs-h1: 28px; --cv-fs-subtitle: 18px; --cv-fs-contact: 12px; --cv-fs-links: 11px; --cv-fs-section: 12px; --cv-fs-intro: 13px; --cv-fs-job: 10.5px; --cv-fs-jobhead: 11px; --cv-fs-meta: 10px; --cv-fs-role: 10px; --cv-fs-detail: 10px; --cv-fs-li: 10px; --cv-fs-skill: 12px; --cv-fs-skillcat: 10px; --cv-fs-chip: 9px; --cv-fs-misc: 12px; }
-            .cv-paper[data-cv-typography="tight"] { --cv-fs-h1: 24px; --cv-fs-subtitle: 16px; --cv-fs-contact: 11px; --cv-fs-links: 10px; --cv-fs-section: 11px; --cv-fs-intro: 11.5px; --cv-fs-job: 9.5px; --cv-fs-jobhead: 10px; --cv-fs-meta: 9.5px; --cv-fs-role: 9.5px; --cv-fs-detail: 9.5px; --cv-fs-li: 9.5px; --cv-fs-skill: 11px; --cv-fs-skillcat: 9.5px; --cv-fs-chip: 8.5px; --cv-fs-misc: 11px; }
-            .cv-paper[data-cv-typography="readable"] { --cv-fs-h1: 30px; --cv-fs-subtitle: 19px; --cv-fs-contact: 12.5px; --cv-fs-links: 11.5px; --cv-fs-section: 12.5px; --cv-fs-intro: 14px; --cv-fs-job: 11px; --cv-fs-jobhead: 11.5px; --cv-fs-meta: 10.5px; --cv-fs-role: 10.5px; --cv-fs-detail: 10.5px; --cv-fs-li: 10.5px; --cv-fs-skill: 12.5px; --cv-fs-skillcat: 10.5px; --cv-fs-chip: 9.5px; --cv-fs-misc: 12.5px; }
-            .cv-paper[data-cv-typography="generous"] { --cv-fs-h1: 32px; --cv-fs-subtitle: 20px; --cv-fs-contact: 13px; --cv-fs-links: 12px; --cv-fs-section: 13px; --cv-fs-intro: 14.5px; --cv-fs-job: 11.5px; --cv-fs-jobhead: 12px; --cv-fs-meta: 11px; --cv-fs-role: 11px; --cv-fs-detail: 11px; --cv-fs-li: 11px; --cv-fs-skill: 13px; --cv-fs-skillcat: 11px; --cv-fs-chip: 10px; --cv-fs-misc: 13px; }
-            .cv-paper[data-cv-typography="max"] { --cv-fs-h1: 34px; --cv-fs-subtitle: 21px; --cv-fs-contact: 13.5px; --cv-fs-links: 12.5px; --cv-fs-section: 13.5px; --cv-fs-intro: 15px; --cv-fs-job: 12px; --cv-fs-jobhead: 12.5px; --cv-fs-meta: 11.5px; --cv-fs-role: 11.5px; --cv-fs-detail: 11.5px; --cv-fs-li: 11.5px; --cv-fs-skill: 13.5px; --cv-fs-skillcat: 11.5px; --cv-fs-chip: 10.5px; --cv-fs-misc: 14px; }
-            .cv-paper[data-cv-theme="ocean"] { --cv-accent: #0d9488; --cv-chip-bg: rgba(13, 148, 136, 0.15); --cv-strip: rgba(13, 148, 136, 0.28); }
-            .cv-paper[data-cv-theme="ember"] { --cv-accent: #c2410c; --cv-paper-bg: #fffbf7; --cv-text: #44403c; --cv-heading: #292524; --cv-muted: #78716c; --cv-muted2: #57534e; --cv-intro-bg: #fff7ed; --cv-chip-bg: rgba(194, 65, 12, 0.14); --cv-strip: rgba(194, 65, 12, 0.32); --cv-skill-bg: #fff7ed; --cv-skill-border: #fed7aa; --cv-skill-heading: #431407; }
-            .cv-paper[data-cv-theme="aurora"] { --cv-accent: #7c3aed; --cv-paper-bg: #faf5ff; --cv-text: #575569; --cv-heading: #4c1d95; --cv-muted: #7c6fa3; --cv-muted2: #5b4f7a; --cv-intro-bg: #f3e8ff; --cv-chip-bg: rgba(124, 58, 237, 0.16); --cv-strip: rgba(109, 40, 217, 0.3); --cv-skill-bg: #f5f3ff; --cv-skill-border: #ddd6fe; --cv-skill-heading: #5b21b6; }
-            .cv-paper[data-cv-theme="moss"] { --cv-accent: #3f6212; --cv-paper-bg: #f7faf5; --cv-text: #3d4426; --cv-heading: #1a2e05; --cv-muted: #5c6640; --cv-muted2: #4a5530; --cv-intro-bg: #eef4e6; --cv-chip-bg: rgba(63, 98, 18, 0.14); --cv-strip: rgba(63, 98, 18, 0.26); --cv-skill-bg: #f2f6ec; --cv-skill-border: #d4e0c4; --cv-skill-heading: #1a2e05; }
-            .cv-paper[data-cv-theme="midnight"] { --cv-accent: #fbbf24; --cv-paper-bg: #0f172a; --cv-text: #cbd5e1; --cv-heading: #f8fafc; --cv-muted: #94a3b8; --cv-muted2: #64748b; --cv-intro-bg: #1e293b; --cv-chip-bg: rgba(251, 191, 36, 0.14); --cv-strip: rgba(251, 191, 36, 0.22); --cv-skill-bg: #1e293b; --cv-skill-border: #334155; --cv-skill-heading: #e2e8f0; }
-            .cv-paper[data-cv-theme="gazette"] { --cv-accent: #b91c1c; --cv-paper-bg: #faf6ee; --cv-text: #292524; --cv-heading: #1c1917; --cv-muted: #57534e; --cv-muted2: #44403c; --cv-intro-bg: #f5f0e6; --cv-chip-bg: rgba(185, 28, 28, 0.1); --cv-strip: rgba(28, 25, 23, 0.18); --cv-skill-bg: #fffcf5; --cv-skill-border: #e7e0d4; --cv-skill-heading: #1c1917; }
-            .cv-paper[data-cv-theme="studio"] { --cv-accent: #0a0a0a; --cv-paper-bg: #fafafa; --cv-text: #262626; --cv-heading: #0a0a0a; --cv-muted: #525252; --cv-muted2: #404040; --cv-intro-bg: #f5f5f5; --cv-chip-bg: #e5e5e5; --cv-strip: rgba(10,10,10,0.22); --cv-skill-bg: #ffffff; --cv-skill-border: #0a0a0a; --cv-skill-heading: #0a0a0a; --cv-intro-radius: 0; --cv-skill-radius: 2px; --cv-section-rule: 3px; }
-            .cv-paper[data-cv-density="compact"] { --cv-paper-padding-y: 14mm; --cv-paper-padding-x: 10mm; }
-            .cv-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; gap: 14px; }
-            h1 { margin: 0; font-size: var(--cv-fs-h1); color: var(--cv-heading); }
-            .cv-subtitle { margin: 5px 0 0; color: var(--cv-accent); font-size: var(--cv-fs-subtitle); font-weight: 600; }
-            .contact-info-cv { text-align: right; font-size: var(--cv-fs-contact); color: var(--cv-muted); }
-            .cv-header-links { margin-top: 6px; font-size: var(--cv-fs-links); }
-            .cv-header-links a { color: var(--cv-accent); }
-            .intro-cv { width: 100%; margin: 0; padding: 14px 18px; font-size: var(--cv-fs-intro); line-height: 1.6; color: var(--cv-text); text-align: start; white-space: pre-wrap; box-sizing: border-box; background: var(--cv-intro-bg); border: 1px solid var(--cv-skill-border); border-top: var(--cv-section-rule) solid var(--cv-accent); border-radius: var(--cv-intro-radius); }
-            .cv-paper[data-cv-theme="studio"] .intro-cv { border-width: 2px; border-top-width: var(--cv-section-rule); }
-            .section-cv { margin-bottom: 22px; }
-            .section-cv__heading { font-size: var(--cv-fs-section); text-transform: uppercase; letter-spacing: 0.06em; color: var(--cv-heading); border-bottom: var(--cv-section-rule) solid var(--cv-accent); display: inline-block; margin: 0 0 10px 0; padding-bottom: 2px; font-weight: 700; }
-            .section-cv--experience .section-cv__heading, .section-cv--projects .section-cv__heading, .section-cv--education .section-cv__heading { margin-bottom: 7px; }
-            .experiences-cv, .projects-cv, .education-cv { display: flex; flex-direction: column; gap: 4px; }
-            .job-cv, .project-cv, .edu-cv { margin: 0; padding: 3px 0 3px 10px; border-left: 2px solid var(--cv-strip); font-size: var(--cv-fs-job); line-height: 1.38; }
-            .job-cv__head, .project-cv__head, .edu-cv__head { display: block; font-weight: 600; font-size: var(--cv-fs-jobhead); color: var(--cv-heading); line-height: 1.34; }
-            .job-cv__name, .project-cv__name, .edu-cv__name { font-weight: 700; }
-            .job-cv__meta, .project-cv__meta, .edu-cv__meta { font-weight: 500; color: var(--cv-muted); font-size: var(--cv-fs-meta); }
-            .job-cv__role { margin-top: 2px; font-weight: 600; font-size: var(--cv-fs-role); color: var(--cv-accent); line-height: 1.3; }
-            .job-cv__location { margin-top: 1px; font-size: var(--cv-fs-meta); font-weight: 500; color: var(--cv-muted); line-height: 1.3; }
-            .project-cv__detail, .edu-cv__detail { margin-top: 2px; color: var(--cv-muted2); font-size: var(--cv-fs-detail); line-height: 1.38; }
-            .job-cv-subsection { margin-top: 4px; }
-            .job-cv-subsection:first-child { margin-top: 2px; }
-            .job-subheading-cv { font-size: var(--cv-fs-detail); font-weight: 700; color: var(--cv-heading); margin: 0 0 2px; line-height: 1.34; }
-            .job-cv-subsection ul { margin: 2px 0 0; padding-left: 14px; }
-            .cv-paper .job-cv li { font-size: var(--cv-fs-li); line-height: 1.38; margin-bottom: 1px; }
-            .cv-paper[data-cv-density="compact"] .section-cv--experience .section-cv__heading, .cv-paper[data-cv-density="compact"] .section-cv--projects .section-cv__heading, .cv-paper[data-cv-density="compact"] .section-cv--education .section-cv__heading { margin-bottom: 6px; }
-            .cv-paper[data-cv-density="compact"] .experiences-cv, .cv-paper[data-cv-density="compact"] .projects-cv, .cv-paper[data-cv-density="compact"] .education-cv { gap: 4px; }
-            .cv-paper[data-cv-density="compact"] .job-cv, .cv-paper[data-cv-density="compact"] .project-cv, .cv-paper[data-cv-density="compact"] .edu-cv { padding: 2px 0 2px 8px; font-size: calc(var(--cv-fs-job) * 0.9524); }
-            .cv-paper[data-cv-density="compact"] .job-cv__head, .cv-paper[data-cv-density="compact"] .project-cv__head, .cv-paper[data-cv-density="compact"] .edu-cv__head { font-size: calc(var(--cv-fs-jobhead) * 0.9545); }
-            .cv-paper[data-cv-density="compact"] .job-cv__meta, .cv-paper[data-cv-density="compact"] .project-cv__meta, .cv-paper[data-cv-density="compact"] .edu-cv__meta { font-size: calc(var(--cv-fs-meta) * 0.95); }
-            .cv-paper[data-cv-density="compact"] .job-cv__role { font-size: calc(var(--cv-fs-role) * 0.95); }
-            .cv-paper[data-cv-density="compact"] .job-cv__location { font-size: calc(var(--cv-fs-meta) * 0.9); }
-            .cv-paper[data-cv-density="compact"] .project-cv__detail, .cv-paper[data-cv-density="compact"] .edu-cv__detail { font-size: calc(var(--cv-fs-detail) * 0.95); }
-            .cv-paper[data-cv-density="compact"] .job-subheading-cv { font-size: calc(var(--cv-fs-detail) * 0.95); }
-            .cv-paper[data-cv-density="compact"] .job-cv li { font-size: calc(var(--cv-fs-li) * 0.95); }
-            ul { padding-left: 18px; margin: 5px 0; }
-            li { margin-bottom: 3px; }
-            .skills-grid-cv { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; align-items: start; }
-            .skill-box-cv { box-sizing: border-box; padding: 9px 10px; background: var(--cv-skill-bg); border-radius: var(--cv-skill-radius); font-size: var(--cv-fs-skill); line-height: 1.42; color: var(--cv-text); border: 1px solid var(--cv-skill-border); box-shadow: inset 3px 0 0 0 var(--cv-accent); word-break: break-word; overflow-wrap: break-word; }
-            .cv-paper[data-cv-theme="studio"] .skill-box-cv { border-width: 2px; }
-            .skill-box-cv strong { display: block; margin: 0 0 3px; padding-bottom: 2px; line-height: 1.25; color: var(--cv-skill-heading); font-size: var(--cv-fs-skillcat); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--cv-skill-border); }
-            .skill-chips-cv { display: flex; flex-wrap: wrap; gap: 3px; margin: 4px 0 3px; row-gap: 3px; }
-            .skill-chip-cv { font-size: var(--cv-fs-chip); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.2; padding: 1px 5px; border-radius: 3px; background: var(--cv-chip-bg); color: var(--cv-accent); }
-            .cv-keyword-hit { background: #fef08a; color: #422006; padding: 0 2px; border-radius: 2px; }
-            .cert-cv { font-size: var(--cv-fs-misc); margin-bottom: 8px; color: var(--cv-text); }
-            li.lang-cv { font-size: var(--cv-fs-misc); margin-bottom: 4px; color: var(--cv-text); }
-            .cv-paper[data-cv-density="compact"] h1 { font-size: calc(var(--cv-fs-h1) * 0.7857); }
-            .cv-paper[data-cv-density="compact"] .cv-subtitle { font-size: calc(var(--cv-fs-subtitle) * 0.8333); }
-            .cv-paper[data-cv-density="compact"] .section-cv { margin-bottom: 13px; }
-            .cv-paper[data-cv-density="compact"] .intro-cv { font-size: calc(var(--cv-fs-intro) * 0.9231); padding: 10px 12px; }
-            .cv-paper[data-cv-density="compact"] li { font-size: calc(var(--cv-fs-misc) * 0.9167); }
-            @page { size: A4; margin: 0; }
-            @media print {
-                body { background: white !important; padding: 0 !important; display: block !important; }
-                .cv-paper { box-shadow: none !important; width: 210mm !important; max-width: 210mm !important; min-height: auto !important; padding: var(--cv-paper-padding-y) var(--cv-paper-padding-x) !important; margin: 0 auto !important; }
-                .skills-grid-cv { grid-template-columns: repeat(3, 1fr) !important; gap: 11px !important; }
-                .section-cv > .section-cv__heading { page-break-after: avoid; break-after: avoid-page; }
-                .cv-skills-stack > .section-cv__heading { page-break-after: avoid; break-after: avoid-page; }
-                .cv-skills-stack > .skills-grid-cv { page-break-before: avoid; break-before: avoid-page; }
-                .job-cv { break-inside: auto; page-break-inside: auto; }
-                .skill-box-cv { break-inside: avoid; page-break-inside: avoid; }
-                .intro-cv, .skill-box-cv { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-            }
-        </style>
-    </head>
-    <body>
-        <div class="cv-paper" data-cv-theme="midnight" data-cv-density="compact" data-cv-typography="generous">
-            
-                    <div class="cv-header">
-                        <div class="name-area"><h1>Alan Vidal</h1><p class="cv-subtitle">Expert cybersécurité produits</p></div>
-                        <div class="contact-info-cv"><div>alan.vidal@ik.me | 06 34 20 70 80</div><div>4 rue Auguste Laurent, Chelles 77500</div><div class="cv-header-links"><a href="https://www.linkedin.com/in/alan-vidal-3608a1a9" rel="noopener noreferrer">LinkedIn</a></div></div>
-                    </div>
-                    <section class="section-cv"><div class="intro-cv">Expert Cybersécurité produit : Systèmes Critiques &amp; Embarqués.<br>
-Durcissement OS, Secure Boot et analyse de risques produit. Spécialisé dans la conception de solutions sécurisées et sûres pour la protection civile et la défense.</div></section>
-                    <section class="section-cv section-cv--experience" aria-labelledby="sec-exp"><h2 class="section-cv__heading" id="sec-exp">Parcours Professionnel</h2><div class="experiences-cv">
-                        <div class="job-cv">
-                            <div class="job-cv__head"><span class="job-cv__name">SeeHaptic</span><span class="job-cv__meta"> · 09/2025 — 03/2026</span></div>
-                            <div class="job-cv__role">Architecte Qualité &amp; Cyber</div>
-                            
-                            <div class="job-cv-subsection"><ul><li>Analyse de vulnérabilités, risques côté produit, préconisations de correctifs.</li><li>Campagnes de tests, dashboards, KPI, arbitrage des correctifs avec les équipes.</li></ul></div><div class="job-cv-subsection"><ul></ul></div>
-                        </div>
-                        <div class="job-cv">
-                            <div class="job-cv__head"><span class="job-cv__name">Crosscall</span><span class="job-cv__meta"> · 05/2021 — 07/2025</span></div>
-                            <div class="job-cv__role">Architecte système Android</div>
-                            <div class="job-cv__location">Île-de-France · Télétravail</div>
-                            <div class="job-cv-subsection"><div class="job-subheading-cv">Organisation de projets et d&#39;équipe</div><ul><li>Pilotage transverse : Gestion de projet et d&#39;équipe, incluant le pilotage du projet NEO (coordination OEM, ESN et équipes internes).</li><li>Ingénierie documentaire : Création de documents d&#39;architecture et rédaction des spécifications techniques jusqu&#39;aux sous-traitants.</li><li>Formateur interne : Formation sur l’internalisation du développement logiciel et la cybersécurité des systèmes embarqués, incluant les piliers de la cybersécurité et la cryptographie.</li><li>Encadrement technique : Mise en place d&#39;une équipe de validation formée au développement en équipe.</li></ul></div><div class="job-cv-subsection"><div class="job-subheading-cv">Expertise technique</div><ul><li>Développement Framework : Conception et PoC de nouvelles fonctionnalités dans le Framework Android et portage QCOM .</li><li>Sécurisation système : Mise en place de mesures de sécurité sur les terminaux : services système signés, bootloader et firewall natif.</li><li>Analyse &amp; Rétro-ingénierie : Interception TLS sur le terminal, analyse du comportement des sources et des binaires.</li><li>Expertise système : Étude d&#39;architecture du mode bureau via une analyse comparative (achat, open source, dev interne) pour définir une stratégie technique optimisée, sans dette technique.</li></ul></div><div class="job-cv-subsection"><div class="job-subheading-cv">Qualité et performance</div><ul><li>Analytique &amp; KPI : Élaboration de KPI, création d&#39;outils de mesure de performance et analyse de l&#39;usage terrain (KPI constructeur).</li><li>Automatisation : Mise en place et conception de systèmes automatisés de validation et d&#39;automatisation d&#39;UI.</li><li>Outils industriels : Création d&#39;une bibliothèque embarquée de scénarios pour la validation et le suivi de la qualité produit.</li></ul></div>
-                        </div>
-                        <div class="job-cv">
-                            <div class="job-cv__head"><span class="job-cv__name">ANSSI, Agence Nationale de la Sécurité des Systèmes d&#39;Information</span><span class="job-cv__meta"> · 10/2019 — 11/2020</span></div>
-                            <div class="job-cv__role">Concepteur développeur Android</div>
-                            <div class="job-cv__location">Paris</div>
-                            <div class="job-cv-subsection"><ul><li>DEV : cahier des charges, spécifications, retours utilisateurs, validation hiérarchique du projet applicatif mobile.</li><li>ÉTUDE : recherche, modifications et développement d&#39;applicatifs pour smartphones en environnement durci.</li></ul></div>
-                        </div>
-                        <div class="job-cv">
-                            <div class="job-cv__head"><span class="job-cv__name">ST(SI)², Service des technologies et des systèmes d&#39;information de la Sécurité intérieure</span><span class="job-cv__meta"> · 01/2018 — 09/2019</span></div>
-                            <div class="job-cv__role">Ingénieur développeur réseaux et télécommunications</div>
-                            
-                            <div class="job-cv-subsection"><ul><li>PC-STORM : étude de faisabilité et appli d&#39;aide à la décision multi-opérateur ; rapport 69 pages (KPI réseaux, moyens matériels/logiciels, sûreté) ; gestion des dépendances et ordonnancement des processus.</li><li>ÉTUDES PROSPECTIVES : authentification, communications critiques, projet PC-STORM ; renfort télécoms.</li><li>RÉTROINGÉNIERIE : tests de résistance (décompilation, données, contournements — root, tokens, etc.).</li></ul></div>
-                        </div>
-                        <div class="job-cv">
-                            <div class="job-cv__head"><span class="job-cv__name">Natixis</span><span class="job-cv__meta"> · 2016 — 2017</span></div>
-                            <div class="job-cv__role">Ingénieur outils de développement</div>
-                            <div class="job-cv__location">Charenton-le-Pont</div>
-                            <div class="job-cv-subsection"><ul><li>OUTILS : recherche d&#39;outils pour traduire spécifications en tests concrets (Corporate &amp; Investment Banking).</li><li>CI/CD : intégration Jenkins d&#39;un outil d&#39;aide à la gestion des sources.</li></ul></div>
-                        </div></div></section><section class="section-cv section-cv--skills" aria-labelledby="sec-skills"><div class="cv-skills-stack"><h2 class="section-cv__heading" id="sec-skills">Compétences</h2><div class="skills-grid-cv"><div class="skill-box-cv"><strong>Pilotage &amp; organisation</strong><div class="skill-chips-cv"><span class="skill-chip-cv">Coordination</span><span class="skill-chip-cv">Gestion de projet</span></div>Pilotage de prestataires OEM/ESN, rédaction de cahiers des charges et spécifications, documents d&#39;architecture. Création de KPI et de dashboards.</div><div class="skill-box-cv"><strong>Cybersécurité</strong><div class="skill-chips-cv"><span class="skill-chip-cv">Systemes embarqués</span><span class="skill-chip-cv">Réseaux</span></div>Analyse de vulnérabilités, risques produit, cryptographie, rétro-ingénierie, Secure Boot, pentests, gestion des flux et des ports.</div><div class="skill-box-cv"><strong>Développement &amp; plateformes</strong><div class="skill-chips-cv"><span class="skill-chip-cv">Architecture</span><span class="skill-chip-cv">devTools</span></div>Android, Java, Kotlin, Smali, C / C++, Git, CI/CD, Linux, Docker, opnsense.</div></div></div></section><section class="section-cv section-cv--projects" aria-labelledby="sec-proj"><h2 class="section-cv__heading" id="sec-proj">Projets</h2><div class="projects-cv"><div class="project-cv"><div class="project-cv__head"><span class="project-cv__name">Infra perso : Docker, OPNsense, VPN.</span></div><div class="project-cv__detail">Mise en place et gestion d&#39;infrastructures multi-serveurs sécurisées (Docker, Firewall OPNsense, VPN).</div></div><div class="project-cv"><div class="project-cv__head"><span class="project-cv__name">Exploration IA</span></div><div class="project-cv__detail">Création de jeux et d&#39;applications permettant de coupler code prédictible et LLM.</div></div><div class="project-cv"><div class="project-cv__head"><span class="project-cv__name">Développements divers</span></div><div class="project-cv__detail">Développement d’applications axées sur la sécurité et la communication (SMS sécurisés non persistants, communication maillée, challenges stéganographiques).</div></div></div></section><section class="section-cv section-cv--education" aria-labelledby="sec-edu"><h2 class="section-cv__heading" id="sec-edu">Diplômes &amp; Transmission</h2><div class="education-cv"><div class="edu-cv"><div class="edu-cv__head"><span class="edu-cv__name">CNAM</span><span class="edu-cv__meta"> · 2017 — 2019</span></div><div class="edu-cv__detail">Master Informatique — Systèmes embarqués et mobiles sûrs (SEMS)</div></div><div class="edu-cv"><div class="edu-cv__head"><span class="edu-cv__name">Paris VIII</span><span class="edu-cv__meta"> · 2016 — 2017</span></div><div class="edu-cv__detail">Licence professionnelle SI / Développement — 3e de promotion</div></div><div class="edu-cv"><div class="edu-cv__head"><span class="edu-cv__name">UPEC</span><span class="edu-cv__meta"> · 2015 — 2016</span></div><div class="edu-cv__detail">DUT Réseau &amp; télécommunications</div></div></div></section>
-        </div>
-    </body>
-    </html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CV - Alan Vidal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', system-ui, sans-serif; background: #f1f5f9; display: flex; justify-content: center; padding: 20px; margin: 0; }
+.cv-paper { box-sizing: border-box; width: 210mm; max-width: 210mm; min-height: 297mm; background: var(--cv-paper-bg); --cv-paper-padding-y: 18mm; --cv-paper-padding-x: 13mm; padding: var(--cv-paper-padding-y) var(--cv-paper-padding-x); box-shadow: 0 5px 15px rgba(0,0,0,0.1); color: var(--cv-text); line-height: 1.5; text-rendering: optimizeLegibility; font-optical-sizing: auto; -webkit-print-color-adjust: exact; print-color-adjust: exact; --cv-accent: #2563eb; --cv-text: #334155; --cv-heading: #1e293b; --cv-muted: #64748b; --cv-muted2: #3f4d5c; --cv-paper-bg: #ffffff; --cv-intro-bg: #f8fafc; --cv-intro-radius: 6px; --cv-chip-bg: rgba(37, 99, 235, 0.12); --cv-strip: rgba(37, 99, 235, 0.22); --cv-skill-bg: #f8fafc; --cv-skill-border: #e2e8f0; --cv-skill-heading: #1e293b; --cv-skill-radius: 6px; --cv-section-rule: 2px; --cv-rule: var(--cv-skill-border); --cv-rule-strong: color-mix(in srgb, var(--cv-accent) 38%, var(--cv-rule) 62%); --cv-surface-subtle: var(--cv-intro-bg); --cv-fs-h1: 28px; --cv-fs-subtitle: 18px; --cv-fs-contact: 12px; --cv-fs-links: 11px; --cv-fs-section: 13px; --cv-fs-intro: 13px; --cv-fs-job: 10.5px; --cv-fs-jobhead: 11px; --cv-fs-meta: 10px; --cv-fs-role: 10px; --cv-fs-detail: 10px; --cv-fs-li: 10px; --cv-fs-skill: 12px; --cv-fs-skillcat: 10px; --cv-fs-chip: 9px; --cv-fs-misc: 12px; }.cv-paper[data-cv-typography="micro"] { --cv-fs-h1: 22px; --cv-fs-subtitle: 15px; --cv-fs-contact: 10.5px; --cv-fs-links: 9.5px; --cv-fs-section: 11.5px; --cv-fs-intro: 11px; --cv-fs-job: 9px; --cv-fs-jobhead: 9.5px; --cv-fs-meta: 9px; --cv-fs-role: 9px; --cv-fs-detail: 9px; --cv-fs-li: 9px; --cv-fs-skill: 10.5px; --cv-fs-skillcat: 9px; --cv-fs-chip: 8px; --cv-fs-misc: 10.5px; }
+.cv-paper[data-cv-typography="tight"] { --cv-fs-h1: 24px; --cv-fs-subtitle: 16px; --cv-fs-contact: 11px; --cv-fs-links: 10px; --cv-fs-section: 12px; --cv-fs-intro: 11.5px; --cv-fs-job: 9.5px; --cv-fs-jobhead: 10px; --cv-fs-meta: 9.5px; --cv-fs-role: 9.5px; --cv-fs-detail: 9.5px; --cv-fs-li: 9.5px; --cv-fs-skill: 11px; --cv-fs-skillcat: 9.5px; --cv-fs-chip: 8.5px; --cv-fs-misc: 11px; }
+.cv-paper[data-cv-typography="readable"] { --cv-fs-h1: 30px; --cv-fs-subtitle: 19px; --cv-fs-contact: 12.5px; --cv-fs-links: 11.5px; --cv-fs-section: 13.5px; --cv-fs-intro: 14px; --cv-fs-job: 11px; --cv-fs-jobhead: 11.5px; --cv-fs-meta: 10.5px; --cv-fs-role: 10.5px; --cv-fs-detail: 10.5px; --cv-fs-li: 10.5px; --cv-fs-skill: 12.5px; --cv-fs-skillcat: 10.5px; --cv-fs-chip: 9.5px; --cv-fs-misc: 12.5px; }
+.cv-paper[data-cv-typography="generous"] { --cv-fs-h1: 32px; --cv-fs-subtitle: 20px; --cv-fs-contact: 13px; --cv-fs-links: 12px; --cv-fs-section: 14px; --cv-fs-intro: 14.5px; --cv-fs-job: 11.5px; --cv-fs-jobhead: 12px; --cv-fs-meta: 11px; --cv-fs-role: 11px; --cv-fs-detail: 11px; --cv-fs-li: 11px; --cv-fs-skill: 13px; --cv-fs-skillcat: 11px; --cv-fs-chip: 10px; --cv-fs-misc: 13px; }
+.cv-paper[data-cv-typography="max"] { --cv-fs-h1: 34px; --cv-fs-subtitle: 21px; --cv-fs-contact: 13.5px; --cv-fs-links: 12.5px; --cv-fs-section: 14.5px; --cv-fs-intro: 15px; --cv-fs-job: 12px; --cv-fs-jobhead: 12.5px; --cv-fs-meta: 11.5px; --cv-fs-role: 11.5px; --cv-fs-detail: 11.5px; --cv-fs-li: 11.5px; --cv-fs-skill: 13.5px; --cv-fs-skillcat: 11.5px; --cv-fs-chip: 10.5px; --cv-fs-misc: 14px; }
+.cv-paper[data-cv-design="editorial"][data-cv-theme="slate"] { --cv-paper-bg: #ffffff; --cv-intro-bg: #f8fafc; --cv-skill-bg: #f8fafc; --cv-skill-border: #e2e8f0; --cv-skill-heading: #1e293b; }
+.cv-paper[data-cv-design="editorial"][data-cv-theme="ocean"] { --cv-accent: #0d9488; --cv-chip-bg: rgba(13, 148, 136, 0.15); --cv-strip: rgba(13, 148, 136, 0.28); }
+.cv-paper[data-cv-design="editorial"][data-cv-theme="ember"] { --cv-accent: #c2410c; --cv-paper-bg: #fffbf7; --cv-text: #44403c; --cv-heading: #292524; --cv-muted: #78716c; --cv-muted2: #57534e; --cv-intro-bg: #fff7ed; --cv-chip-bg: rgba(194, 65, 12, 0.14); --cv-strip: rgba(194, 65, 12, 0.32); --cv-skill-bg: #fff7ed; --cv-skill-border: #fed7aa; --cv-skill-heading: #431407; }
+.cv-paper[data-cv-design="editorial"][data-cv-theme="aurora"] { --cv-accent: #7c3aed; --cv-paper-bg: #faf5ff; --cv-text: #575569; --cv-heading: #4c1d95; --cv-muted: #7c6fa3; --cv-muted2: #5b4f7a; --cv-intro-bg: #f3e8ff; --cv-chip-bg: rgba(124, 58, 237, 0.16); --cv-strip: rgba(109, 40, 217, 0.3); --cv-skill-bg: #f5f3ff; --cv-skill-border: #ddd6fe; --cv-skill-heading: #5b21b6; }
+.cv-paper[data-cv-design="editorial"][data-cv-theme="moss"] { --cv-accent: #3f6212; --cv-paper-bg: #f7faf5; --cv-text: #3d4426; --cv-heading: #1a2e05; --cv-muted: #5c6640; --cv-muted2: #4a5530; --cv-intro-bg: #eef4e6; --cv-chip-bg: rgba(63, 98, 18, 0.14); --cv-strip: rgba(63, 98, 18, 0.26); --cv-skill-bg: #f2f6ec; --cv-skill-border: #d4e0c4; --cv-skill-heading: #1a2e05; }
+.cv-paper[data-cv-design="editorial"][data-cv-theme="midnight"] { --cv-accent: #fbbf24; --cv-paper-bg: #0f172a; --cv-text: #cbd5e1; --cv-heading: #f8fafc; --cv-muted: #94a3b8; --cv-muted2: #64748b; --cv-intro-bg: #1e293b; --cv-chip-bg: rgba(251, 191, 36, 0.14); --cv-strip: rgba(251, 191, 36, 0.22); --cv-skill-bg: #1e293b; --cv-skill-border: #334155; --cv-skill-heading: #e2e8f0; }
+.cv-paper[data-cv-design="editorial"][data-cv-theme="gazette"] { --cv-accent: #b91c1c; --cv-paper-bg: #faf6ee; --cv-text: #292524; --cv-heading: #1c1917; --cv-muted: #57534e; --cv-muted2: #44403c; --cv-intro-bg: #f5f0e6; --cv-chip-bg: rgba(185, 28, 28, 0.1); --cv-strip: rgba(28, 25, 23, 0.18); --cv-skill-bg: #fffcf5; --cv-skill-border: #e7e0d4; --cv-skill-heading: #1c1917; }
+.cv-paper[data-cv-design="editorial"][data-cv-theme="studio"] { --cv-accent: #0a0a0a; --cv-paper-bg: #fafafa; --cv-text: #262626; --cv-heading: #0a0a0a; --cv-muted: #525252; --cv-muted2: #404040; --cv-intro-bg: #f5f5f5; --cv-chip-bg: #e5e5e5; --cv-strip: rgba(10,10,10,0.22); --cv-skill-bg: #ffffff; --cv-skill-border: #0a0a0a; --cv-skill-heading: #0a0a0a; --cv-intro-radius: 0; --cv-skill-radius: 2px; --cv-section-rule: 3px; }
+.cv-paper[data-cv-design="editorial"][data-cv-theme="terracotta"] { --cv-accent: #b45309; --cv-paper-bg: #fffaf5; --cv-text: #44403c; --cv-heading: #431407; --cv-muted: #78716c; --cv-muted2: #57534e; --cv-intro-bg: #fff7ed; --cv-chip-bg: rgba(180, 83, 9, 0.12); --cv-strip: rgba(180, 83, 9, 0.28); --cv-skill-bg: #fff7ed; --cv-skill-border: #fed7aa; --cv-skill-heading: #7c2d12; }
+.cv-paper[data-cv-design="editorial"][data-cv-theme="indigo"] { --cv-accent: #4338ca; --cv-paper-bg: #fafbff; --cv-text: #334155; --cv-heading: #1e1b4b; --cv-muted: #64748b; --cv-muted2: #475569; --cv-intro-bg: #eef2ff; --cv-chip-bg: rgba(67, 56, 202, 0.12); --cv-strip: rgba(67, 56, 202, 0.26); --cv-skill-bg: #f5f3ff; --cv-skill-border: #c7d2fe; --cv-skill-heading: #312e81; }
+/* Fond blanc : sans override en fin de feuille, les thèmes pack (.cv-paper[data-cv-design][data-cv-theme], plus spécifiques) écrasent cette variable. Voir export CV_WHITE_PAPER_OVERRIDE_CSS (bas de fichier). */
+.cv-paper[data-cv-white-paper="1"] { --cv-paper-bg: #ffffff; }
+.cv-paper[data-cv-white-paper="1"][data-cv-design="editorial"][data-cv-theme="midnight"] { --cv-text: #334155; --cv-heading: #1e293b; --cv-muted: #64748b; --cv-muted2: #3f4d5c; --cv-intro-bg: #f8fafc; --cv-chip-bg: rgba(251, 191, 36, 0.18); --cv-strip: rgba(251, 191, 36, 0.32); --cv-skill-bg: #f8fafc; --cv-skill-border: #e2e8f0; --cv-skill-heading: #1e293b; }
+.cv-paper[data-cv-density="compact"] { --cv-paper-padding-y: 14mm; --cv-paper-padding-x: 10mm; }
+.cv-paper[data-cv-density="relaxed"] { --cv-paper-padding-y: 20mm; --cv-paper-padding-x: 14mm; }
+@page { size: A4; margin: 0; }
+@media print {
+    body { background: white !important; padding: 0 !important; display: block !important; }
+    .cv-paper { box-shadow: none !important; width: 210mm !important; max-width: 210mm !important; min-height: auto !important; padding: var(--cv-paper-padding-y) var(--cv-paper-padding-x) !important; margin: 0 auto !important; }
+}
+
+.cv-paper[data-cv-design="atlas"][data-cv-theme="atlas-azure"] { --cv-accent: #2563eb; --cv-paper-bg: #ffffff; --cv-text: #334155; --cv-heading: #1e3a8a; --cv-muted: #64748b; --cv-muted2: #475569; --cv-intro-bg: #eff6ff; --cv-chip-bg: rgba(37,99,235,0.12); --cv-strip: rgba(37,99,235,0.22); --cv-skill-bg: #f8fafc; --cv-skill-border: #bfdbfe; --cv-skill-heading: #1d4ed8; }
+.cv-paper[data-cv-design="atlas"][data-cv-theme="atlas-sage"] { --cv-accent: #0d9488; --cv-paper-bg: #f3faf8; --cv-text: #3d4d46; --cv-heading: #134e4a; --cv-muted: #5c7a72; --cv-muted2: #4d6560; --cv-intro-bg: #ecfdf5; --cv-chip-bg: rgba(13,148,136,0.11); --cv-strip: rgba(45,212,191,0.28); --cv-skill-bg: #ecfdf5; --cv-skill-border: #a7f3d0; --cv-skill-heading: #0f766e; }
+.cv-paper[data-cv-design="atlas"][data-cv-theme="atlas-lavender"] { --cv-accent: #8b5cf6; --cv-paper-bg: #faf9ff; --cv-text: #57534e; --cv-heading: #5b21b6; --cv-muted: #7c6fa3; --cv-muted2: #6b5b8f; --cv-intro-bg: #f3e8ff; --cv-chip-bg: rgba(139,92,246,0.11); --cv-strip: rgba(167,139,250,0.28); --cv-skill-bg: #faf5ff; --cv-skill-border: #e9d5ff; --cv-skill-heading: #6d28d9; }
+.cv-paper[data-cv-design="atlas"][data-cv-theme="atlas-blush"] { --cv-accent: #e11d48; --cv-paper-bg: #fff7fb; --cv-text: #575152; --cv-heading: #9f1239; --cv-muted: #9a7a82; --cv-muted2: #856873; --cv-intro-bg: #fce7f3; --cv-chip-bg: rgba(225,29,72,0.08); --cv-strip: rgba(244,114,182,0.26); --cv-skill-bg: #fdf2f8; --cv-skill-border: #fbcfe8; --cv-skill-heading: #be185d; }
+.cv-paper[data-cv-design="atlas"][data-cv-theme="atlas-forest"] { --cv-accent: #15803d; --cv-paper-bg: #f3fcf5; --cv-text: #365314; --cv-heading: #14532d; --cv-muted: #4d7c0f; --cv-muted2: #3f6212; --cv-intro-bg: #dcfce7; --cv-chip-bg: rgba(21,128,61,0.11); --cv-strip: rgba(34,197,94,0.26); --cv-skill-bg: #f0fdf4; --cv-skill-border: #86efac; --cv-skill-heading: #166534; }
+.cv-paper[data-cv-design="atlas"][data-cv-theme="atlas-seafoam"] { --cv-accent: #0891b2; --cv-paper-bg: #f0fdff; --cv-text: #3d4f55; --cv-heading: #155e75; --cv-muted: #5b8a96; --cv-muted2: #4a7580; --cv-intro-bg: #ecfeff; --cv-chip-bg: rgba(8,145,178,0.1); --cv-strip: rgba(34,211,238,0.28); --cv-skill-bg: #f0fdfa; --cv-skill-border: #a5f3fc; --cv-skill-heading: #0e7490; }
+.cv-paper[data-cv-design="atlas"][data-cv-theme="atlas-honey"] { --cv-accent: #d97706; --cv-paper-bg: #fffdf7; --cv-text: #57534e; --cv-heading: #78350f; --cv-muted: #78716c; --cv-muted2: #656056; --cv-intro-bg: #fffbeb; --cv-chip-bg: rgba(217,119,6,0.1); --cv-strip: rgba(251,191,36,0.28); --cv-skill-bg: #fffbeb; --cv-skill-border: #fde68a; --cv-skill-heading: #b45309; }
+.cv-paper[data-cv-design="atlas"][data-cv-theme="atlas-graphite"] { --cv-accent: #475569; --cv-paper-bg: #f8fafc; --cv-text: #475569; --cv-heading: #1e293b; --cv-muted: #64748b; --cv-muted2: #526077; --cv-intro-bg: #f1f5f9; --cv-chip-bg: rgba(71,85,105,0.1); --cv-strip: rgba(51,65,85,0.2); --cv-skill-bg: #ffffff; --cv-skill-border: #e2e8f0; --cv-skill-heading: #334155; }
+.cv-paper[data-cv-design="atlas"][data-cv-theme="atlas-bordeaux"] { --cv-accent: #991b1b; --cv-paper-bg: #fffdfd; --cv-text: #44403c; --cv-heading: #450a0a; --cv-muted: #78716c; --cv-muted2: #57534e; --cv-intro-bg: #fef2f2; --cv-chip-bg: rgba(153,27,27,0.1); --cv-strip: rgba(127,29,29,0.24); --cv-skill-bg: #fff7f7; --cv-skill-border: #fecaca; --cv-skill-heading: #7f1d1d; }
+.cv-paper[data-cv-design="atlas"][data-cv-theme="atlas-regalia"] { --cv-accent: #ca8a04; --cv-paper-bg: #f8fafc; --cv-text: #1e293b; --cv-heading: #0f172a; --cv-muted: #475569; --cv-muted2: #334155; --cv-intro-bg: #e8edf5; --cv-chip-bg: rgba(30,58,138,0.12); --cv-strip: rgba(30,64,175,0.26); --cv-skill-bg: #f1f5f9; --cv-skill-border: #c7d2fe; --cv-skill-heading: #1e3a8a; }
+.cv-paper[data-cv-design="atlas"][data-cv-theme="atlas-copper"] { --cv-accent: #c2410c; --cv-paper-bg: #fffbf7; --cv-text: #44403c; --cv-heading: #7c2d12; --cv-muted: #78716c; --cv-muted2: #57534e; --cv-intro-bg: #fff7ed; --cv-chip-bg: rgba(194,65,12,0.12); --cv-strip: rgba(234,88,12,0.26); --cv-skill-bg: #fff7ed; --cv-skill-border: #fed7aa; --cv-skill-heading: #9a3412; }
+.cv-paper[data-cv-design="atlas"][data-cv-theme="atlas-olive"] { --cv-accent: #5c6b3f; --cv-paper-bg: #fafaf5; --cv-text: #3f3f38; --cv-heading: #3d4420; --cv-muted: #6b6f62; --cv-muted2: #57564e; --cv-intro-bg: #f3f4ea; --cv-chip-bg: rgba(92,107,63,0.14); --cv-strip: rgba(113,122,62,0.28); --cv-skill-bg: #f6f7ef; --cv-skill-border: #d4d9c4; --cv-skill-heading: #4a5228; }
+.cv-paper[data-cv-design="atlas"][data-cv-theme="atlas-plum"] { --cv-accent: #7e22ce; --cv-paper-bg: #faf8fc; --cv-text: #4a4456; --cv-heading: #581c87; --cv-muted: #756b82; --cv-muted2: #635a72; --cv-intro-bg: #fae8ff; --cv-chip-bg: rgba(126,34,206,0.1); --cv-strip: rgba(192,132,252,0.32); --cv-skill-bg: #faf5ff; --cv-skill-border: #e9d5ff; --cv-skill-heading: #6b21a8; }
+
+
+.skill-chips-cv { display: flex; flex-wrap: wrap; gap: 4px; margin: 3px 0 4px; row-gap: 4px; }
+.skill-chip-cv { font-size: calc(var(--cv-fs-chip) * var(--cv-mul-chip, 1)); font-weight: 600; text-transform: none; letter-spacing: 0.02em; line-height: 1.2; padding: 1px 6px; border-radius: 3px; border: 1px solid color-mix(in srgb, var(--cv-accent) 28%, var(--cv-skill-border)); background: var(--cv-chip-bg); color: color-mix(in srgb, var(--cv-accent) 78%, var(--cv-heading) 22%); }
+.cv-keyword-hit { background: #fef08a; color: #422006; padding: 0 2px; border-radius: 2px; }
+
+
+.cv-paper[data-cv-design="atlas"] .cv-atlas {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 18px 28px;
+  padding: 16px 18px 18px 20px;
+  margin-bottom: 22px;
+  border: 1px solid var(--cv-rule, #e2e8f0);
+  border-left: 6px solid var(--cv-accent, #2563eb);
+  background: linear-gradient(
+    105deg,
+    color-mix(in srgb, var(--cv-accent) 7%, var(--cv-paper-bg, #fff)) 0%,
+    var(--cv-paper-bg, #fff) 48%
+  );
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--cv-heading) 6%, transparent);
+}
+/* Hiérarchie des titres (écarts légers) : nom > titre de poste > sections H2 > intitulé d’entrée > sous-titres / détail */
+.cv-paper[data-cv-design="atlas"] .cv-atlas__brand h1 {
+  margin: 0;
+  font-size: calc(var(--cv-fs-h1, 28px) * var(--cv-mul-h1, 1) * 0.84);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cv-heading, #1e293b);
+  line-height: 1.08;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__title {
+  margin: 10px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid color-mix(in srgb, var(--cv-accent) 28%, var(--cv-rule));
+  font-size: calc(var(--cv-fs-subtitle, 18px) * var(--cv-mul-subtitle, 1) * 0.68);
+  font-weight: 500;
+  color: var(--cv-text, #334155);
+  text-transform: none;
+  letter-spacing: 0.01em;
+  max-width: 42ch;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__meta {
+  text-align: right;
+  font-size: calc(var(--cv-fs-contact, 12px) * var(--cv-mul-contact, 1) * 0.9);
+  color: var(--cv-muted2, #475569);
+  line-height: 1.5;
+  min-width: min(100%, 200px);
+  padding-left: 12px;
+  border-left: 1px dashed color-mix(in srgb, var(--cv-rule) 85%, var(--cv-accent));
+  align-self: center;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__links {
+  margin-top: 6px;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__links a {
+  color: var(--cv-accent, #2563eb);
+  font-weight: 500;
+  font-size: calc(var(--cv-fs-links, 11px) * var(--cv-mul-links, 1) * 0.95);
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__age-label {
+  font-weight: 600;
+  color: var(--cv-heading, #1e293b);
+}
+/* Police d’en-tête (Sans / Serif / Mono) : même logique que l’éditorial (.cv-header). */
+.cv-paper[data-cv-design="atlas"][data-cv-name-font="serif"] .cv-atlas__top {
+  font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+}
+.cv-paper[data-cv-design="atlas"][data-cv-name-font="serif"] .cv-atlas__brand h1 {
+  font-weight: 600;
+}
+.cv-paper[data-cv-design="atlas"][data-cv-name-font="mono"] .cv-atlas__top {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+}
+.cv-paper[data-cv-design="atlas"][data-cv-name-font="mono"] .cv-atlas__brand h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 12px;
+  font-size: calc(var(--cv-fs-section, 13px) * var(--cv-mul-section, 1) * 0.735);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: color-mix(in srgb, var(--cv-heading) 88%, var(--cv-accent));
+  padding: 0;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__section-title::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: linear-gradient(90deg, var(--cv-accent, #2563eb), color-mix(in srgb, var(--cv-rule) 92%, transparent));
+  min-width: 24px;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__intro {
+  padding: 8px 0 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  font-size: calc(var(--cv-fs-intro, 13px) * var(--cv-mul-intro, 1) * 0.98);
+  line-height: 1.58;
+  color: var(--cv-text, #334155);
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__intro p {
+  margin: 0 0 0.5em;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__intro p:last-child {
+  margin-bottom: 0;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__job,
+.cv-paper[data-cv-design="atlas"] .cv-atlas__edu {
+  margin-bottom: 0;
+  padding: 0 0 14px 14px;
+  border-bottom: none;
+  border-left: 2px solid color-mix(in srgb, var(--cv-accent) 50%, var(--cv-rule, #e2e8f0));
+  margin-left: 2px;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__job + .cv-atlas__job,
+.cv-paper[data-cv-design="atlas"] .cv-atlas__edu + .cv-atlas__edu {
+  padding-top: 12px;
+  border-top: 1px solid color-mix(in srgb, var(--cv-rule, #e2e8f0) 75%, transparent);
+  margin-top: 2px;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__job:last-child,
+.cv-paper[data-cv-design="atlas"] .cv-atlas__edu:last-child {
+  padding-bottom: 0;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__job-role {
+  font-size: calc(var(--cv-fs-role, 10px) * var(--cv-mul-role, 1) * 1.22);
+  font-weight: 700;
+  color: var(--cv-heading, #1e293b);
+  margin-bottom: 2px;
+}
+/* Aligné sur job-cv : entreprise/lieu → jobhead, période → meta (curseurs distincts). */
+.cv-paper[data-cv-design="atlas"] .cv-atlas__job-metarow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6px 12px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 6px;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__job-company {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: calc(var(--cv-fs-jobhead, 11px) * var(--cv-mul-jobhead, 1) * 0.97);
+  font-weight: 600;
+  color: var(--cv-heading, #1e293b);
+  line-height: 1.34;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__job-company--empty {
+  display: none;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__job-period {
+  flex-shrink: 0;
+  text-align: right;
+  margin-left: auto;
+  font-size: calc(var(--cv-fs-meta, 10px) * var(--cv-mul-meta, 1) * 1.05);
+  font-weight: 500;
+  color: var(--cv-muted, #64748b);
+  line-height: 1.3;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__job ul {
+  margin: 0;
+  padding-left: 16px;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__job li {
+  font-size: calc(var(--cv-fs-li, 10px) * var(--cv-mul-li, 1) * 1.02);
+  line-height: 1.4;
+  margin-bottom: 2px;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__subhead {
+  font-size: calc(var(--cv-fs-detail, 10px) * var(--cv-mul-detail, 1) * 0.94);
+  margin: 6px 0 2px;
+  font-weight: 700;
+  color: var(--cv-heading, #1e293b);
+}
+/* Compétences : matrice type tableau (colonne libellés), pas de tuiles. */
+.cv-paper[data-cv-design="atlas"] .cv-atlas__skills-grid {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--cv-rule, #e2e8f0);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__skillbox {
+  display: grid;
+  grid-template-columns: minmax(72px, 22%) 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 14px;
+  row-gap: 4px;
+  align-items: start;
+  padding: 10px 14px;
+  margin: 0;
+  background: color-mix(in srgb, var(--cv-intro-bg, #f8fafc) 55%, var(--cv-paper-bg, #fff));
+  border: none;
+  border-bottom: 1px solid var(--cv-rule, #e2e8f0);
+  border-radius: 0;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__skillbox:nth-child(even) {
+  background: color-mix(in srgb, var(--cv-paper-bg, #fff) 88%, var(--cv-intro-bg, #f8fafc));
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__skillbox:last-child {
+  border-bottom: none;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__skillbox strong {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  display: block;
+  margin: 0;
+  padding: 2px 10px 2px 0;
+  font-size: calc(var(--cv-fs-skillcat, 10px) * var(--cv-mul-skillcat, 1) * 0.86);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: color-mix(in srgb, var(--cv-accent) 55%, var(--cv-heading));
+  text-align: right;
+  line-height: 1.35;
+  border-right: 1px solid color-mix(in srgb, var(--cv-accent) 22%, var(--cv-rule));
+  align-self: stretch;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__skillbox .skill-chips-cv {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__skillbox-body {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: calc(var(--cv-fs-skill, 12px) * var(--cv-mul-skill, 1) * 0.93);
+  line-height: 1.45;
+  color: var(--cv-text, #334155);
+  margin: 0;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__skillbox .skill-chip-cv {
+  border-radius: 1px;
+  font-size: calc(var(--cv-fs-chip) * var(--cv-mul-chip, 1) * 0.92);
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__skillbox:not(:has(> strong)) {
+  grid-template-columns: 1fr;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__skillbox:not(:has(> strong)) .skill-chips-cv {
+  grid-column: 1;
+  grid-row: 1;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__skillbox:not(:has(> strong)) .cv-atlas__skillbox-body {
+  grid-column: 1;
+  grid-row: 2;
+}
+/* Formation : mêmes classes que l’expérience (.cv-atlas__job-role / __job-metarow) ; détail = corps de puce. */
+.cv-paper[data-cv-design="atlas"] .cv-atlas__edu-detail {
+  margin-top: 6px;
+  margin-bottom: 0;
+  font-size: calc(var(--cv-fs-li, 10px) * var(--cv-mul-li, 1) * 1.02);
+  line-height: 1.4;
+  color: var(--cv-text, #334155);
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__cert,
+.cv-paper[data-cv-design="atlas"] .cv-atlas__lang {
+  font-size: calc(var(--cv-fs-misc, 12px) * var(--cv-mul-misc, 1) * 0.92);
+  margin-bottom: 6px;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__cert strong,
+.cv-paper[data-cv-design="atlas"] .cv-atlas__lang strong {
+  font-size: 1.07em;
+  font-weight: 700;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__project {
+  margin-bottom: 12px;
+  padding: 8px 12px 10px;
+  border: 1px solid var(--cv-rule, #e2e8f0);
+  border-top: 2px solid var(--cv-accent, #2563eb);
+  background: color-mix(in srgb, var(--cv-intro-bg, #f8fafc) 35%, var(--cv-paper-bg, #fff));
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__project:last-child {
+  margin-bottom: 0;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__project-name {
+  font-size: calc(var(--cv-fs-role, 10px) * var(--cv-mul-role, 1) * 1.22);
+  font-weight: 700;
+  color: var(--cv-heading, #1e293b);
+  margin-bottom: 2px;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__project-meta {
+  font-size: calc(var(--cv-fs-meta, 10px) * var(--cv-mul-meta, 1) * 1);
+  color: var(--cv-muted, #64748b);
+  margin-bottom: 4px;
+}
+.cv-paper[data-cv-design="atlas"] .cv-atlas__project-detail {
+  font-size: calc(var(--cv-fs-detail, 10px) * var(--cv-mul-detail, 1) * 1.02);
+  line-height: 1.4;
+  color: var(--cv-text, #334155);
+}
+@media print {
+  /* Ne pas mettre break-inside: avoid sur tout .cv-atlas__block : une section « Expérience »
+   * entière éviterait les coupures et serait repoussée à la page suivante si trop haute,
+   * laissant un trou énorme sous le bandeau sur la page 1. */
+  .cv-paper[data-cv-design="atlas"] .cv-atlas__top {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .cv-paper[data-cv-design="atlas"] .cv-atlas__job,
+  .cv-paper[data-cv-design="atlas"] .cv-atlas__edu {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .cv-paper[data-cv-design="atlas"] .cv-atlas__project {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  /* Section Expertise : titre + tableau de compétences sur la même page (pas de coupure au milieu du bloc). */
+  .cv-paper[data-cv-design="atlas"] .cv-atlas__block:has(> .cv-atlas__skills-grid) {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .cv-paper[data-cv-design="atlas"] .cv-atlas__skills-grid {
+    overflow: visible;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+.cv-paper[data-cv-white-paper="1"] { --cv-paper-bg: #ffffff !important; }
+
+    </style>
+</head>
+<body>
+    <div class="cv-paper" data-cv-design="atlas" data-cv-theme="atlas-copper" data-cv-density="compact" data-cv-typography="readable" data-cv-white-paper="1" data-cv-name-font="serif">
+        <div class="cv-atlas"><header class="cv-atlas__top">
+      <div class="cv-atlas__brand">
+        <h1>Alan Vidal</h1>
+        <p class="cv-atlas__title">Expert cybersécurité produits</p>
+      </div>
+      <div class="cv-atlas__meta">
+        <div>alan.vidal@ik.me | 06 34 20 70 80</div>
+        <div>4 rue Auguste Laurent, Chelles 77500</div>
+        
+        <div class="cv-atlas__links"><a href="https://www.linkedin.com/in/alan-vidal-3608a1a9" rel="noopener noreferrer">LinkedIn</a></div>
+      </div>
+    </header><div class="cv-atlas__body"><section class="cv-atlas__block" aria-labelledby="sec-intro-atlas"><h2 class="cv-atlas__section-title" id="sec-intro-atlas">Profil</h2>
+        <div class="cv-atlas__intro">Expert Cybersécurité produit : Systèmes Critiques &amp; Embarqués.<br>
+Durcissement OS, Secure Boot et analyse de risques produit, spécialisé dans la conception de solutions sécurisées et sûres pour la protection civile et la défense.</div></section><section class="cv-atlas__block" aria-labelledby="sec-exp-atlas"><h2 class="cv-atlas__section-title" id="sec-exp-atlas">Expérience</h2><div class="cv-atlas__job">
+      <div class="cv-atlas__job-role">Architecte Qualité &amp; Cyber</div>
+      <div class="cv-atlas__job-metarow"><span class="cv-atlas__job-company">SeeHaptic</span><span class="cv-atlas__job-period">09/2025 — 03/2026</span></div>
+      <ul><li>Analyse de vulnérabilités, risques côté produit, préconisations de correctifs.</li><li>Campagnes de tests, dashboards, KPI, arbitrage des correctifs avec les équipes.</li></ul><ul></ul>
+    </div><div class="cv-atlas__job">
+      <div class="cv-atlas__job-role">Architecte système Android</div>
+      <div class="cv-atlas__job-metarow"><span class="cv-atlas__job-company">Crosscall · Île-de-France</span><span class="cv-atlas__job-period">05/2021 — 07/2025</span></div>
+      <div class="cv-atlas__subhead">Organisation de projets et d&#39;équipe</div><ul><li>Pilotage transverse : Gestion de projet et d&#39;équipe, incluant le pilotage du projet NEO (coordination OEM, ESN et équipes internes).</li><li>Ingénierie documentaire : Création de documents d&#39;architecture et rédaction des spécifications techniques jusqu&#39;aux sous-traitants.</li><li>Formateur interne : Formation sur l’internalisation du développement logiciel et la cybersécurité des systèmes embarqués, incluant les piliers de la cybersécurité et la cryptographie.</li><li>Encadrement technique : Mise en place d&#39;une équipe de validation formée au développement en équipe.</li></ul><div class="cv-atlas__subhead">Expertise technique</div><ul><li>Développement Framework : Conception et PoC de nouvelles fonctionnalités dans le Framework Android et portage QCOM</li><li>Sécurisation système : Mise en place de mesures de sécurité sur les terminaux : services système signés, bootloader et firewall natif.</li><li>Analyse &amp; Rétro-ingénierie : Interception TLS sur le terminal, analyse du comportement des sources et des binaires.</li><li>Expertise système : Étude d&#39;architecture du mode bureau via une analyse comparative (achat, open source, dev interne) pour définir une stratégie technique optimisée, sans dette technique.</li></ul><div class="cv-atlas__subhead">Qualité et performance</div><ul><li>Analytique &amp; KPI : Élaboration de KPI, création d&#39;outils de mesure de performance et analyse de l&#39;usage terrain (KPI constructeur).</li><li>Automatisation : Mise en place et conception de systèmes automatisés de validation et d&#39;automatisation d&#39;UI.</li><li>Outils industriels : Création d&#39;une bibliothèque embarquée de scénarios pour la validation et le suivi de la qualité produit.</li></ul>
+    </div><div class="cv-atlas__job">
+      <div class="cv-atlas__job-role">Concepteur développeur Android</div>
+      <div class="cv-atlas__job-metarow"><span class="cv-atlas__job-company">ANSSI, Agence Nationale de la Sécurité des Systèmes d&#39;Information · Paris</span><span class="cv-atlas__job-period">10/2019 — 11/2020</span></div>
+      <ul><li>DEV : cahier des charges, spécifications, retours utilisateurs, validation hiérarchique du projet applicatif mobile.</li><li>ÉTUDE : recherche, modifications et développement d&#39;applicatifs pour smartphones en environnement durci.</li></ul>
+    </div><div class="cv-atlas__job">
+      <div class="cv-atlas__job-role">Ingénieur développeur réseaux et télécommunications</div>
+      <div class="cv-atlas__job-metarow"><span class="cv-atlas__job-company">ST(SI)², Service des technologies et des systèmes d&#39;information de la Sécurité intérieure</span><span class="cv-atlas__job-period">01/2018 — 09/2019</span></div>
+      <ul><li>PC-STORM : étude de faisabilité et appli d&#39;aide à la décision multi-opérateur ; rapport 69 pages (KPI réseaux, moyens matériels/logiciels, sûreté) ; gestion des dépendances et ordonnancement des processus.</li><li>ÉTUDES PROSPECTIVES : authentification, communications critiques, projet PC-STORM ; renfort télécoms.</li><li>RÉTROINGÉNIERIE : tests de résistance (décompilation, données, contournements — root, tokens, etc.).</li></ul>
+    </div><div class="cv-atlas__job">
+      <div class="cv-atlas__job-role">Ingénieur outils de développement</div>
+      <div class="cv-atlas__job-metarow"><span class="cv-atlas__job-company">Natixis · Charenton-le-Pont</span><span class="cv-atlas__job-period">2016 — 2017</span></div>
+      <ul><li>OUTILS : recherche d&#39;outils pour traduire spécifications en tests concrets (Corporate &amp; Investment Banking).</li><li>CI/CD : intégration Jenkins d&#39;un outil d&#39;aide à la gestion des sources.</li></ul>
+    </div></section><section class="cv-atlas__block" aria-labelledby="sec-skills-atlas"><h2 class="cv-atlas__section-title" id="sec-skills-atlas">Expertise</h2><div class="cv-atlas__skills-grid"><div class="cv-atlas__skillbox">
+      <strong>Pilotage &amp; organisation</strong>
+      <div class="skill-chips-cv"><span class="skill-chip-cv">Coordination</span><span class="skill-chip-cv">Gestion de projet</span></div>
+      <div class="cv-atlas__skillbox-body">Pilotage de prestataires OEM/ESN, rédaction de cahiers des charges et spécifications, documents d&#39;architecture. Création de KPI et de dashboards.</div>
+    </div><div class="cv-atlas__skillbox">
+      <strong>Cybersécurité</strong>
+      <div class="skill-chips-cv"><span class="skill-chip-cv">Systèmes embarqués</span><span class="skill-chip-cv">Réseaux</span></div>
+      <div class="cv-atlas__skillbox-body">Analyse de vulnérabilités, risques produit, cryptographie, rétro-ingénierie, Secure Boot, pentests, gestion des flux et des ports.</div>
+    </div><div class="cv-atlas__skillbox">
+      <strong>Développement &amp; plateformes</strong>
+      <div class="skill-chips-cv"><span class="skill-chip-cv">Architecture</span><span class="skill-chip-cv">devTools</span></div>
+      <div class="cv-atlas__skillbox-body">Android, Java, Kotlin, Smali, C / C++, Git, CI/CD, Linux, Docker, opnsense.</div>
+    </div></div></section><section class="cv-atlas__block" aria-labelledby="sec-edu-atlas"><h2 class="cv-atlas__section-title" id="sec-edu-atlas">Formation</h2><div class="cv-atlas__edu"><div class="cv-atlas__job-role">Master Informatique — Systèmes embarqués et mobiles sûrs (SEMS)</div><div class="cv-atlas__job-metarow"><span class="cv-atlas__job-company">CNAM, Conservatoire National des Arts et Métiers</span><span class="cv-atlas__job-period">2017 — 2019</span></div></div><div class="cv-atlas__edu"><div class="cv-atlas__job-role">Licence professionnelle SI / Développement — 3e de promotion</div><div class="cv-atlas__job-metarow"><span class="cv-atlas__job-company">Paris VIII</span><span class="cv-atlas__job-period">2016 — 2017</span></div></div><div class="cv-atlas__edu"><div class="cv-atlas__job-role">DUT Réseau &amp; télécommunications</div><div class="cv-atlas__job-metarow"><span class="cv-atlas__job-company">UPEC</span><span class="cv-atlas__job-period">2015 — 2016</span></div></div></section><section class="cv-atlas__block" aria-labelledby="sec-proj-atlas"><h2 class="cv-atlas__section-title" id="sec-proj-atlas">Réalisations</h2><div class="cv-atlas__project">
+        <div class="cv-atlas__project-name">Home lab</div>
+        <div class="cv-atlas__project-meta">Mise en place et gestion d&#39;infrastructures multi-serveurs sécurisées (Docker, Firewall OPNsense, VPN).</div>
+        
+      </div><div class="cv-atlas__project">
+        <div class="cv-atlas__project-name">Exploration IA</div>
+        <div class="cv-atlas__project-meta">Création de jeux et d&#39;applications permettant de coupler code prédictible et LLM.</div>
+        
+      </div><div class="cv-atlas__project">
+        <div class="cv-atlas__project-name">Développements divers</div>
+        <div class="cv-atlas__project-meta">Développement d’applications axées sur la sécurité et la communication (SMS sécurisés non persistants, communication maillée, challenges stéganographiques).</div>
+        
+      </div></section></div></div>
+    </div>
+</body>
+</html>
